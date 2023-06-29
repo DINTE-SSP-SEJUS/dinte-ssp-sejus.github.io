@@ -1,0 +1,125 @@
+/* Estilos para a barra lateral */
+.sidebar {
+  width: 210px;
+  height: 100vh;
+  background-color: $branco2;
+  color: $branco2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.sidebar .logo {
+  width: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 30%;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.sidebar li {
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li a {
+  color: $preto2;
+  text-decoration: none;
+  padding: 5px;
+  width: 100%;
+  opacity: .8;
+
+}
+
+.sidebar ul li:hover a {
+  color: $preto2;
+  opacity: 1;
+}
+
+.sidebar li i {
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+  box-shadow: 0 1px 3px $preto2;
+}
+
+/* Estilos para recolher a barra lateral */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed .logo {
+  display: none;
+}
+
+.sidebar.collapsed li {
+  text-align: center;
+  border: none;
+}
+
+.sidebar.collapsed ul {
+  margin-top: 80px;
+}
+
+.sidebar.collapsed li a {
+  display: none;
+}
+
+
+/* Botão de sair*/
+#logout {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  padding: 3px;
+  border-color: $verde;
+  color: $verde;
+  &:hover{
+    color: $branco2;
+    background-color: $verde;
+  }
+}
+
+/* Estilos para o botão de recolher */
+.toggle-button {
+  position: fixed;
+  bottom: 10px;
+  left: 120px;
+}
+
+.sidebar.collapsed .toggle-button {
+  display: none;
+}
+
+/* Estilos para o menu hamburguer */
+.menu-icon {
+  display: none;
+  font-size: 40px;
+  position: absolute;
+  top: 0;
+  left: 20%;
+  cursor: pointer;
+  color: $preto2;
+}
+
+/* Mostrar o menu hamburguer quando a sidebar é recolhida */
+.sidebar.collapsed .menu-icon {
+  display: block;
+}

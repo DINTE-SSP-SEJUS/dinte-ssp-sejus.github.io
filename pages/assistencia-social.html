@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Assistência social - SIAPEN</title>
+  </head>
+  <body>
+
+    <div class="header">
+      <h3>Olá</h3>
+      <span>Roberto Carlos de sousa</span>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
+      <ul>
+        <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="./busca-interno.html"><i class="fas fa-user"></i>Buscar
+            interno</a></li>
+        <li><a href="./cadastro.html"><i class="fas fa-pen"></i>Cadastro</a></li>
+        <li><a style="color: #007932" href="./assistencia-social.html"><i
+              class="fas fa-users"></i>Assistência social</a></li>
+        <li><a href="./educacao.html"><i class="fas fa-book"></i>Educação</a></li>
+        <li><a href="./saude.html"><i class="fas fa-notes-medical"></i>Saúde</a></li>
+        <li><a href="./trabalho.html"><i class="fas fa-briefcase"></i>Trabalho</a></li>
+        <li><a href="./inteligencia.html"><i class="fas fa-eye"></i>Inteligência</a></li>
+        <li><a href="./ocorrencia.html"><i class="fas fa-exclamation"></i>Ocorrência</a></li>
+        <li><a href="./chamados.html"><i class="fas fa-comment"></i>Chamados</a></li>
+        <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permisões</a></li>
+        <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
+      </ul>
+
+      <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+
+      <div class="menu-icon" onclick="toggleSidebar()">
+        <span>&#9776;</span>
+      </div>
+
+      <button id="logout">Sair</button>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+
+        <div class="form-container">
+
+          <div class="modal-form">
+
+            <div class="form-left">
+              <div class="form-row">
+                <label for="titulo">Título de eleitor:</label>
+                <input type="number"
+                  id="titulo"
+                  name="titulo">
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="profissao">Profissão:</label>
+                <input type="text"
+                  id="profissao"
+                  name="profissao">
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="escolaridade">Escolaridade:</label>
+                <input type="text"
+                  id="escolaridade"
+                  name="escolaridade">
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="estado-civil">Estado civil:</label>
+                <input type="text"
+                  id="estado-civil"
+                  name="estado-civil">
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="religiao">Religião:</label>
+                <input type="text"
+                  id="religiao"
+                  name="religiao">
+              </div>
+            </div>
+
+            <div class="form-rigth">
+              <div class="form-row">
+                <label for="filhos">Filhos:</label>
+                <div class="checkbox-group">
+                  <input type="radio" id="filhos-sim"
+                    name="filhos" value="sim">
+                  <label for="filhos-sim">Sim</label>
+                  <input type="number" id="nome-filhos"
+                    placeholder="Quantidade">
+                  <br>
+                  <input type="radio" id="filhos-nao"
+                    name="filhos">
+                  <label for="filhos-nao">Não</label>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="sexo">Sexo:</label>
+                <div class="radio-group">
+                  <input type="radio" id="masculino" name="sexo"
+                    value="masculino">
+                  <label for="masculino">Masculino</label>
+
+                  <input type="radio" id="feminino"
+                    name="sexo"
+                    value="feminino">
+                  <label for="feminino">Feminino</label>
+
+                  <input type="radio" id="outro"
+                    name="sexo"
+                    value="outro">
+                  <label for="outro">Outros</label>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="orientacao">Orientação sexual:</label>
+                <div class="radio-group">
+                  <input type="radio" id="heterossexual" name="orientacao"
+                    value="heterossexual">
+                  <label for="heterossexual">Heterossexual</label>
+                  <br>
+                  <input type="radio" id="homossexual"
+                    name="orientacao"
+                    value="homossexual">
+                  <label for="homossexual">Homossexual</label>
+                  <br>
+                  <input type="radio" id="bissexual" name="orientacao"
+                    value="bissexual">
+                  <label for="bissexual">Bissexual</label>
+                  <br>
+                  <input type="radio" id="outros"
+                    name="orientacao"
+                    value="outros">
+                  <label for="outros">Outros</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="btn-incluir">Incluir</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <h2>Criar ações realizadas pelo Assitente social</h2>
+      </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>
