@@ -1,16 +1,11 @@
-.content-cadastro {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .card {
   width: calc(33.33% - 10px);
   margin-bottom: 20px;
   border-radius: 8px;
+  border-right: 5px solid $verde;
   padding: 20px;
   box-sizing: border-box;
-  box-shadow: 0 1px 3px $preto2;
+  box-shadow: -3px 2px 3px 0px $preto2;
   position: relative;
   background-color: $branco1;
   @media screen and(max-width: 900px) {
@@ -21,66 +16,79 @@
   }
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-  position: relative;
-  background-color: $branco1;
-  width: 1000px;
-  height: 90vh;
-  margin: 5vh auto;
-  padding: 20px;
-  box-sizing: border-box;
-  @media screen and(max-width: 700px) {
-    width: 95vw;
-    padding: 4px;
-  }
-}
-
-.modal-button {
+.button-a {
   float: right;
-}
+  border: 1px solid $preto2;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px $preto2;
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  color: $preto2;
-  opacity: 0.8;
-  cursor: pointer;
   &:hover {
-    color: $preto1;
-    opacity: 1;
+    border-color: $verde;
+    color: $verde;
   }
 }
 
-.modal.show {
+.btn-cadastrar {
+  margin-top: 300px !important;
+}
+
+
+// multstep
+.step {
+  display: none;
+  position: relative;
+}
+
+.step.active {
   display: block;
 }
 
+.button-container {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  button{
+    font-size: 11px;
+    padding: 5px;
+  }
+}
 
-// CSS da Visualizacao das fotos
-.thumbnails {
+.content-cadastro {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  justify-content: space-between;
+}
+
+
+
+// CSS Visualizacao fotos
+.image-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  flex-wrap: wrap;
 }
 
 .thumbnail {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
+  display: inline-block;
+  margin-right: 10px;
 }
 
+.image-list img {
+  width: 40px;
+}
 
+#incluir-foto{
+  margin-bottom: -10px;
+  font-size: 10px;
+  margin-right: -10px;
+}
+
+// inclusao de documentos
+
+.document-list li {
+  text-transform: uppercase;
+}

@@ -16,6 +16,7 @@ h1 {
 
 a {
   text-decoration: none;
+  color: $preto2;
 }
 
 button {
@@ -28,8 +29,11 @@ button {
   box-shadow: 0 1px 3px $preto2;
   transition: all ease-in-out 0.2s;
   &:hover {
-    color: $verde;
     border-color: $verde;
+    color: $verde;
+  }
+  &:hover a {
+    color: $verde;
   }
 }
 
@@ -55,12 +59,13 @@ button {
 
 
 // Formulario geral
-.modal-form {
+.cadastro-form {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   gap: 10px;
   padding-top: 30px;
+  position: relative;
   @media screen and(max-width: 700px) {
     flex-direction: column;
     padding: 10px;
@@ -117,10 +122,7 @@ textarea,
 .form-row button {
   position: absolute;
   right: 10px;
-  bottom: -100px;
-  @media screen and(max-width: 700px) {
-    bottom: -700px;
-  }
+  bottom: 10px;
 }
 
 .form-row label {
