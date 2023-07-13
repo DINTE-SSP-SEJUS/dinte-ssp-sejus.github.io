@@ -38,10 +38,11 @@
     </div>
 
     <div class="container">
+
       <div class="content"> <!--Plantão e chefe de diciplina -->
         <h2>Cadastrar Interno</h2>
         <br>
-        <div class="cadastro-form">
+        <form class="cadastro-form">
           <div class="form-left">
             <div class="form-row">
               <label for="nome">Nome:</label>
@@ -53,7 +54,7 @@
             </div>
             <div class="form-row">
               <label for="cpf">CPF:</label>
-              <input type="text" id="cpf">
+              <input type="number" id="cpf">
             </div>
             <div class="form-row">
               <label for="data-nascimento">Data de Nascimento:</label>
@@ -64,7 +65,10 @@
               <select id="nacionalidade" onchange="changeOptions()">
                 <option value="selecione">Selecione</option>
                 <option value="brasileiro">Brasileiro</option>
-                <option value="estrangeiro">Estrangeiro</option>
+                <option value>Colombiano</option>
+                <option value>Venezuelano</option>
+                <option value>Argentino</option>
+                <option value>Paraguaio</option>
               </select>
             </div>
             <div class="form-row">
@@ -77,22 +81,16 @@
             <div class="form-row">
               <label for="faccao">Facção:</label>
               <div class="checkbox-group">
-                <input type="radio" id="faccao-sim"
-                  name="faccao" value="sim">
-                <label for="faccao-sim">Sim</label>
                 <select type="text" id="nome-faccao">
-                  <option>Selecione</option>
+                  <option>Não Participa</option>
                   <option>PCC</option>
                   <option>CV</option>
-                  <option>Bond40</option>
+                  <option>Bonde dos 40</option>
+                  <option>Familia do norte</option>
                 </select>
                 <br>
-                <input type="radio" id="faccao-nao"
-                  name="faccao">
-                <label for="faccao-nao">Não</label>
               </div>
             </div>
-            <br>
             <div class="form-row">
               <label for="biometrizacao">Biometrização:</label>
               <div>
@@ -107,7 +105,6 @@
             <br>
             <div class="form-row">
               <h2>Fotos</h2>
-              <br>
               <label for="photoType">Tipo de Foto:</label>
               <select id="photoType">
                 <option value="Perfil">Selcione</option>
@@ -126,7 +123,6 @@
               <label for="photoFile">Selecionar Foto:</label>
               <input type="file" id="photoFile" accept="image/*">
               <button id="incluir-foto" type="button" onclick="addPhoto()">Incluir</button>
-
             </div>
 
             <div class="form-row" id="thumbnailContainer"></div>
@@ -136,11 +132,11 @@
           <div class="form-row">
             <button class="btn-cadastrar">Cadastrar</button>
           </div>
-        </div>
+        </form>
       </div>
 
       <div class="content"> <!--Restante dos dados, ADM e demais-->
-        <form id="multistep-form" action="#" method="post">
+        <form id="multistep-form">
           <div class="step active" id="step1">
             <h2>Dados Complementares</h2>
             <div class="cadastro-form">
@@ -155,14 +151,7 @@
                 </div>
                 <div class="form-row">
                   <label for="processo">Processo:</label>
-                  <select id="processo">
-                    <option>Selecionar</option>
-                    <option value="Lorem2">Lorem, ipsum.</option>
-                    <option value="lorem3">Lorem, ipsum.</option>
-                    <option value="lorem4">Lorem, ipsum.</option>
-                  </select>
-                </div>
-                <div class="form-row">
+                  <input type="number" id="processo" placeholder="Número do processo">
                 </div>
               </div>
 
@@ -172,15 +161,21 @@
                   <select id="regime">
                     <option>Selecionar</option>
                     <option value="provisorio">Provisório</option>
-                    <option value="semiaberto">Semiaberto</option>
-                    <option value="provisorio-semiaberto">Provisorio e
-                      Semiaberto</option>
+                    <option value="semiaberto">Sentenciado</option>
+                    <option value="provisorio-semiaberto">Provisorio e Sentenciado</option>
                   </select>
-
                 </div>
-                <br>
                 <div class="form-row">
-
+                  <label for="representacao">Representação:</label>
+                  <select id="representacao">
+                    <option>Selecionar</option>
+                    <option value="advogado">Advogado</option>
+                    <option value="defensor">Defensor</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="jurisdicao">Jurisdição:</label>
+                  <input type="text" id="jurisdicao">
                 </div>
               </div>
             </div>
@@ -228,7 +223,8 @@
                 </select>
 
                 <input type="file" id="documento">
-                <button style="width: 100px;" type="button" onclick="adicionarDocumento()">Adicionar</button>
+                <button style="width: 100px;" type="button"
+                  onclick="adicionarDocumento()">Adicionar</button>
               </div>
 
               <ul class="document-list" id="lista-documentos"></ul>
@@ -243,7 +239,10 @@
 
           <div class="step" id="step4">
             <h2>Outros</h2>
-            <!-- Adicione os campos restantes aqui -->
+            <label>Outras informações</label>
+            <div class="cadastro-form">
+              <textarea style="width: 100%; height: 50px;"></textarea>
+            </div>
 
             <div class="button-container">
               <button type="button" onclick="previousStep(3)">Voltar</button>
@@ -252,6 +251,7 @@
           </div>
         </form>
       </div>
+
     </div>
 
     <script src="../js/script.js"></script>

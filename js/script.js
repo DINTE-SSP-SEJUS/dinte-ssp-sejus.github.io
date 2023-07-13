@@ -45,17 +45,9 @@ function changeOptions() {
       option.text = cidades[i];
       naturalidade.add(option);
     }
-  } else if (nacionalidade === "estrangeiro") {
-    // Adicionar opções de países
-    var paises = ["Venezuela", "Bolívia", "Argentina", "Chile", "Alemanha"];
-    
-    for (var j = 0; j < paises.length; j++) {
-      var option = document.createElement("option");
-      option.text = paises[j];
-      naturalidade.add(option);
-    }
-  }
+  } 
 }
+
 
 // Exibir as fotos
 

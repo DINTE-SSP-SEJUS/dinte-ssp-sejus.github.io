@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Busca Interno - SIAPEN</title>
   </head>
   <body>
@@ -19,14 +20,15 @@
       <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
       <ul>
         <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-        <li><a style="color: #329542" href="./busca-interno.html"><i class="fas fa-user"></i>Buscar interno</a></li>
+        <li><a style="color: #329542" href="./busca-interno.html"><i
+              class="fas fa-user"></i>Buscar interno</a></li>
         <li><a href="./cadastro.html"><i class="fas fa-pen"></i>Cadastro</a></li>
         <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
         <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
       </ul>
-      
+
       <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
-      
+
       <div class="menu-icon" onclick="toggleSidebar()">
         <span>&#9776;</span>
       </div>
@@ -34,7 +36,56 @@
       <button id="logout">Sair</button>
     </div>
 
+    <div class="container">
 
-    <script src="../js/script.js"></script>
-  </body>
-</html>
+      <div class="content">
+        <h2>Buscar Interno</h2>
+        <br>
+        <form>
+          <div class="form-row">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
+          </div>
+          <br>
+          <div style="width: 300px;" class="form-row">
+            <label for="vulgo">Vulgo:</label>
+            <input type="text" id="vulgo">
+          </div>
+          <br>
+          <div style="width: 300px;" class="form-row">
+            <label for="cpf">CPF:</label>
+            <input type="number" id="cpf">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="mae">Mãe:</label>
+            <input type="text" id="mae">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="pai">Pai:</label>
+            <input type="text" id="pai">
+          </div>
+          <br>
+          <div class="form-row">
+            <div class="form-row">
+              <label for="status">Status: </label>
+            </div>
+            <div class="form-row" style="display: flex; flex-direction: row;">
+              <input type="radio" name="status" id="ativo" value="ativo">
+              <label for="ativo" style="margin-right: 10px;">Ativo</label>
+              <input type="radio" name="status" id="inativo" value="inativo">
+              <label for="inativo">Inativo</label>
+            </div>
+            <hr>
+          </div>
+
+            <button class="btn-buscar">Buscar</button>
+          </form>
+        </div>
+
+      </div>
+
+      <script src="../js/script.js"></script>
+    </body>
+  </html>
