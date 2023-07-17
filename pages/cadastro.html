@@ -20,8 +20,7 @@
       <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
       <ul>
         <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-        <li><a href="./busca-interno.html"><i class="fas fa-user"></i>Buscar
-            interno</a></li>
+        <li><a href="./buscar.html"><i class="fas fa-search"></i>Buscar</a></li>
         <li><a style="color: #007932" href="./cadastro.html"><i
               class="fas fa-pen"></i>Cadastro</a></li>
         <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
@@ -47,160 +46,14 @@
         </div>
         <div class="card">
           <h3>Unidade</h3>
-          <a class="button-a" href="#">Cadastrar</a>
+          <a class="button-a" href="../pages/cadastro-unidade.html">Cadastrar</a>
         </div>
         <div class="card">
           <h3>Usuário</h3>
-          <a class="button-a" href="#">Cadastrar</a>
+          <a class="button-a" href="../pages/cadastro-usuario.html">Cadastrar</a>
         </div>
       </div>
-
-    <div class="modal" id="modal2">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Cadastrar Unidade</h2>
-          <div style="padding: 30px 30px 0px 30px;"
-            class="form-container">
-            <div class="form-row">
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="sigla">Sigla:</label>
-              <input style="width: 300px;" type="text" id="sigla"
-                name="sigla">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="regime">Regime:</label>
-              <div class="radio-group">
-                <input type="radio" id="fechado" name="regime"
-                  value="fechado">
-                <label for="fechado">Fechado</label>
-                <input type="radio" id="semiaberto"
-                  name="regime"
-                  value="semiaberto">
-                <label for="semiaberto">Semiaberto</label>
-              </div>
-              <br>
-            </div>
-            <div class="form-row">
-              <label for="capacidade-unidade">Capacidade da
-                Unidade:</label>
-              <input style="width: 200px;" type="number"
-                id="capacidade-unidade"
-                name="capacidade-unidade">
-            </div>
-            <div class="form-row">
-              <label for="capacidade-cela">Capacidade de Cela:</label>
-              <input style="width: 200px;" type="number"
-                id="capacidade-cela"
-                name="capacidade-cela">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="endereco">Endereço:</label>
-              <div class="address-group">
-                <input type="text" id="cep" name="cep"
-                  placeholder="CEP">
-                <input type="text" id="logradouro"
-                  name="logradouro"
-                  placeholder="Logradouro">
-                <input type="text" id="cidade" name="cidade"
-                  placeholder="Cidade">
-                <input type="text" id="estado" name="estado"
-                  placeholder="Estado">
-              </div>
-              <br>
-            </div>
-            <div class="form-row">
-              <label for="lotacao">Lotação:</label>
-              <div class="lotacao-group">
-                <label for="galeria">Galeria</label>
-                <input type="number" id="galeria" name="galeria">
-                <label for="solaris">Solaris</label>
-                <input type="number" id="solaris" name="solaris">
-                <label for="cela">Cela</label>
-                <input type="number" id="cela" name="cela">
-              </div>
-              <br>
-            </div>
-            <div class="form-row">
-              <label for="diretor">Diretor:</label>
-              <input type="text" id="diretor" name="diretor">
-            </div>
-            <div class="form-row">
-              <label for="telefone">Telefone:</label>
-              <input style="width: 200px;" type="tel"
-                id="telefone"
-                name="telefone">
-            </div>
-            <button style="float: right; margin-top: 10px;">Cadastrar</button>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="modal" id="modal3">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Cadastrar Usuário</h2>
-          <div style="padding: 30px 30px 0px 30px;"
-            class="form-container">
-            <div class="form-row">
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="cpf">CPF:</label>
-              <input style="width: 300px;" type="number" id="cpf"
-                name="cpf">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="matricula">Matrícula:</label>
-              <input style="width: 300px;" type="number"
-                id="matricula"
-                name="matricula">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="unidade">Unidade:</label>
-              <input style="width: 300px;" type="text"
-                id="unidade"
-                name="unidade">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="cargo">Cargo:</label>
-              <input style="width: 300px;" type="text" id="cargo"
-                name="cargo">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="area-atuacao">Área de atuação:</label>
-              <input style="width: 300px;" type="text"
-                id="area-atuacao"
-                name="area-atuacao">
-            </div>
-            <br>
-            <div class="form-row">
-              <label for="login">Login:</label>
-              <input style="width: 400px;" type="text" id="login"
-                name="login">
-            </div>
-            <div class="form-row">
-              <label for="senha">Senha:</label>
-              <input style="width: 400px;" type="number"
-                id="senha" name="senha">
-            </div>
-            <button style="float: right; margin-top: 10px;">Cadastrar</button>
-          </div>
-        </div>
-      </div>
-
+      
     </div>
 
     <script src="../js/script.js"></script>

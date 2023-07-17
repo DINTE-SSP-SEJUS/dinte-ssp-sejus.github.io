@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Dashboard - SIAPEN</title>
   </head>
   <body>
@@ -18,15 +19,16 @@
     <div class="sidebar" id="sidebar">
       <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
       <ul>
-        <li><a style="color: #329542"href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-        <li><a href="./busca-interno.html"><i class="fas fa-user"></i>Buscar interno</a></li>
+        <li><a style="color: #329542" href="./dashboard.html"><i
+              class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="./buscar.html"><i class="fas fa-search"></i>Buscar</a></li>
         <li><a href="./cadastro.html"><i class="fas fa-pen"></i>Cadastro</a></li>
         <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
         <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
       </ul>
-      
+
       <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
-      
+
       <div class="menu-icon" onclick="toggleSidebar()">
         <span>&#9776;</span>
       </div>
@@ -34,7 +36,37 @@
       <button id="logout"><a style="color: #ccc" href="../index.html">Sair</a></button>
     </div>
 
+    <div class="container">
+      <div class="content">
+        <div class="content-card-dash">
+          <div class="card-dash" onclick="window.location.href='#'">
+            <h3>Total internos</h3>
+            <p>9380</p>
+          </div>
 
+          <div class="card-dash" onclick="window.location.href='#'">
+            <h3>Internos ativos</h3>
+            <p>5030</p>
+          </div>
+
+          <div class="card-dash" onclick="window.location.href='#'">
+            <h3>Internos inativos</h3>
+            <p>3048</p>
+          </div>
+
+          <div class="card-dash" onclick="window.location.href='#'">
+            <h3>Unidades</h3>
+            <p>17</p>
+          </div>
+        </div>
+
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script src="../js/script.js"></script>
+
   </body>
 </html>

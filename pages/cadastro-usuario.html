@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Cadastro - Usuário</title>
+  </head>
+  <body>
+
+    <div class="header">
+      <h3>Olá</h3>
+      <span>Roberto Carlos de sousa</span>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
+      <ul>
+        <li><a href="./dashboard.html"><i
+              class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="./buscar.html"><i class="fas fa-search"></i>Buscar</a></li>
+        <li><a style="color: #329542" href="./cadastro.html"><i
+              class="fas fa-pen"></i>Cadastro &#9001; voltar</a></li>
+        <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
+        <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
+      </ul>
+
+      <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+
+      <div class="menu-icon" onclick="toggleSidebar()">
+        <span>&#9776;</span>
+      </div>
+
+      <button id="logout"><a style="color: #ccc" href="../index.html">Sair</a></button>
+    </div>
+
+    <div class="container">
+      <div class="modal-content">
+        <h2>Cadastrar Usuário</h2>
+        <form style="padding: 30px 30px 0px 30px;"
+          class="form-container">
+          <div class="cadastro-form">
+            <div class="form-left">
+              <div class="form-row">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+              </div>
+              <div class="form-row">
+                <label for="cpf">CPF:</label>
+                <input style="width: 300px;" type="number" id="cpf"
+                  name="cpf">
+              </div>
+              <div class="form-row">
+                <label for="unidade">Orgão:</label>
+                <input style="width: 300px;" type="text"
+                  id="unidade"
+                  name="unidade">
+              </div>
+              <div class="form-row">
+                <label for="cargo">Função:</label>
+                <input style="width: 300px;" type="text" id="cargo"
+                  name="cargo">
+              </div>
+              <div class="form-row">
+                <label for="area-atuacao">Vínculo:</label>
+                <input style="width: 300px;" type="text"
+                  id="area-atuacao"
+                  name="area-atuacao">
+              </div>
+            </div>
+            <div class="form-right">
+              <div class="form-row">
+                <label for="matricula">Matrícula:</label>
+                <input style="width: 400px;" type="number"
+                  id="matricula"
+                  name="matricula">
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="email">Email:</label>
+                <input style="width: 400px;" type="text" id="email"
+                  name="email">
+              </div>
+              <div class="form-row">
+                <label for="telefone">Telefone:</label>
+                <input style="width: 400px;" type="text" id="telefone"
+                  name="telefone">
+              </div>
+              <br>
+              <div class="form-row">
+                <label for="login">Login:</label>
+                <input style="width: 400px;" type="text" id="login"
+                  name="login">
+              </div>
+              <div class="form-row">
+                <label for="senha">Senha:</label>
+                <input style="width: 400px;" type="number"
+                  id="senha" name="senha">
+              </div>
+            </div>
+          </div>
+          <div>
+            <button style="float: right; margin-top: 10px;">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

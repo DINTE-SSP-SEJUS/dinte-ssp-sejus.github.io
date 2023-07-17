@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Busca Interno - SIAPEN</title>
+    <title>Busca Usuário - SIAPEN</title>
   </head>
   <body>
 
@@ -39,7 +39,7 @@
     <div class="container">
 
       <div class="content">
-        <h2>Buscar Interno</h2>
+        <h2>Buscar Usuário</h2>
         <br>
         <form>
           <div class="form-row">
@@ -48,23 +48,13 @@
           </div>
           <br>
           <div style="width: 300px;" class="form-row">
-            <label for="vulgo">Vulgo:</label>
-            <input type="text" id="vulgo">
-          </div>
-          <br>
-          <div style="width: 300px;" class="form-row">
             <label for="cpf">CPF:</label>
             <input type="number" id="cpf">
           </div>
           <br>
-          <div class="form-row">
-            <label for="mae">Mãe:</label>
-            <input type="text" id="mae">
-          </div>
-          <br>
-          <div class="form-row">
-            <label for="pai">Pai:</label>
-            <input type="text" id="pai">
+          <div style="width: 300px;" class="form-row">
+            <label for="matricula">Matrícula:</label>
+            <input type="number" id="cpf">
           </div>
           <br>
           <div class="form-row">
@@ -89,7 +79,6 @@
           <thead>
             <tr>
               <th>Nome</th>
-              <th>Vulgo</th>
               <th>CPF</th>
               <th>Unidade</th>
               <th>Status</th>
@@ -98,7 +87,6 @@
           <tbody>
             <tr>
               <td>João batista de sousa</td>
-              <td>Joãozinho</td>
               <td>12345678901</td>
               <td>CAPMCO</td>
               <td>Ativo</td>
@@ -111,7 +99,6 @@
             </tr>
             <tr>
               <td>João Eduardo da silva</td>
-              <td>Mary</td>
               <td>98765432103</td>
               <td>CDPDLS</td>
               <td>Inativo</td>
@@ -124,7 +111,6 @@
             </tr>
             <tr>
               <td>João barreto barros da cruz</td>
-              <td>Luquinhas</td>
               <td>56789012324</td>
               <td>PAMS</td>
               <td>Ativo</td>
@@ -144,14 +130,14 @@
     <div id="modal" class="modal-edit">
       <div class="modal-edit-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Dados do Interno</h2>
+        <h2>Dados do Usuário</h2>
         <!-- Adicione aqui os campos para edição dos dados -->
 
       
         <button id="btn-salvar-modal" onclick="saveChanges()">Salvar</button>
       </div>
     </div>
-    
+
     <script src="../js/script.js"></script>
   </body>
 </html>

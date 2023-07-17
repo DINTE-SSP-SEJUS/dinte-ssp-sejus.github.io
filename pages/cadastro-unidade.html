@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Cadastro - Unidade</title>
+  </head>
+  <body>
+
+    <div class="header">
+      <h3>Olá</h3>
+      <span>Roberto Carlos de sousa</span>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
+      <ul>
+        <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="./buscar.html"><i class="fas fa-search"></i>Buscar</a></li>
+        <li><a style="color: #329542" href="./cadastro.html"><i
+              class="fas fa-pen"></i>Cadastro &#9001; voltar</a></li>
+        <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
+        <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
+      </ul>
+
+      <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+
+      <div class="menu-icon" onclick="toggleSidebar()">
+        <span>&#9776;</span>
+      </div>
+
+      <button id="logout"><a style="color: #ccc" href="../index.html">Sair</a></button>
+    </div>
+
+    <div class="container">
+      <div class="content">
+
+        <div class="modal-content">
+          <h2>Cadastrar Unidade</h2>
+          <form style="padding: 30px 30px 0px 30px;"
+            class="form-container">
+            <div class="form-row">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome">
+            </div>
+            <br>
+            <div class="form-row">
+              <label for="sigla">Sigla:</label>
+              <input style="width: 300px;" type="text" id="sigla"
+                name="sigla">
+            </div>
+            <br>
+            <div class="form-row">
+              <label for="regime">Regime:</label>
+              <div class="radio-group">
+                <input type="radio" id="fechado" name="regime"
+                  value="fechado">
+                <label for="fechado">Fechado</label>
+                <input type="radio" id="semiaberto"
+                  name="regime"
+                  value="semiaberto">
+                <label for="semiaberto">Semiaberto</label>
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <label for="tipo">Tipo:</label>
+              <select name="tipo" id="tipo">
+                <option>Selecione</option>
+                <option>Provisório</option>
+                <option>Sentenciado</option>
+                <option>Provisório e Sentenciado</option>
+              </select>
+            </div>
+            <br>
+            <div class="form-row">
+              <label for="genero">Género:</label>
+              <select name="genero" id="genero">
+                <option>Selecione</option>
+                <option>Masculina</option>
+                <option>Feminina</option>
+                <option>Mista</option>
+              </select>
+            </div>
+            <br>
+            <div class="form-row">
+              <label for="capacidade-unidade">Capacidade da
+                Unidade:</label>
+              <input style="width: 200px;" type="number"
+                id="capacidade-unidade"
+                name="capacidade-unidade">
+            </div>
+            <br>
+            <div class="form-row">
+              <label for="endereco">Endereço:</label>
+              <div class="address-group">
+                <input type="text" id="cep" name="cep"
+                  placeholder="CEP">
+                <input type="text" id="logradouro"
+                  name="logradouro"
+                  placeholder="Logradouro">
+                <input type="text" id="cidade" name="cidade"
+                  placeholder="Cidade">
+                <input type="text" id="estado" name="estado"
+                  placeholder="Estado">
+              </div>
+              <br>
+            </div>
+            <div class="form-row">
+              <label for="telefone">Telefone:</label>
+              <input style="width: 200px;" type="tel"
+                id="telefone"
+                name="telefone">
+            </div>
+            <button style="float: right; margin-top: 10px;">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

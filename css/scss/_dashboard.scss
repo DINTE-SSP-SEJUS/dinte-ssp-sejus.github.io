@@ -1,0 +1,34 @@
+.content-card-dash {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.card-dash {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 250px;  
+  border-right: 5px solid $verde;
+  box-shadow: -3px 2px 3px 0px $preto2;
+  cursor: pointer;
+}
+
+.card-dash p {
+  float: right;
+}
+
+.card-dash:hover {
+  background-color: $verde;
+}
+
+//Grafico 
+
+#chart {
+  height: 400px !important;
+  width: 100% !important;
+}
