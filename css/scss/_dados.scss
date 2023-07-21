@@ -1,0 +1,45 @@
+.content-fotos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content-fotos-right {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.content-fotos img {
+  border: 1px solid $preto3;
+}
+
+#icon-user-fotos{
+  font-size: 40px;
+  border: 1px solid $preto3;
+  margin-top: 10px;
+}
+
+.content-dados, .content-endereco, .content-processos {
+  display: flex;
+  justify-content: center;
+}
+
+.ul-left, .ul-right {
+  width: 50%;
+  border: 1px solid $preto3;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  
+  p{
+    font-size: 20px;
+    border-bottom: 1px solid $preto3;
+  }
+}
+
+.content-endereco h4, .content-processos h4 {
+  color: $verde;
+}

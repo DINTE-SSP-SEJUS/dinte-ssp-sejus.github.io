@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Busca - SIAPEN</title>
+    <title>Busca Interno - SIAPEN</title>
   </head>
   <body>
 
@@ -21,8 +21,10 @@
       <ul>
         <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
         <li><a style="color: #329542" href="./buscar.html"><i
-              class="fas fa-search"></i>Buscar</a></li>
+              class="fas fa-search"></i>Buscar Interno</a></li>
         <li><a href="./cadastro.html"><i class="fas fa-pen"></i>Cadastro</a></li>
+        <li><a href="./busca-unidade.html"><i class="fas fa-hotel"></i>Unidades</a></li>
+        <li><a href="./busca-usuario.html"><i class="fas fa-user"></i>Usuários</a></li>
         <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
         <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
       </ul>
@@ -38,21 +40,117 @@
 
     <div class="container">
 
-      <div class="content content-cadastro">
-        <div class="card">
-          <h3>Interno</h3>
-          <a class="button-a" href="../pages/busca-interno.html">Buscar</a>
-        </div>
-        <div class="card">
-          <h3>Unidade</h3>
-          <a class="button-a" href="../pages/busca-unidade.html">Buscar</a>
-        </div>
-        <div class="card">
-          <h3>Usuário</h3>
-          <a class="button-a" href="../pages/busca-usuario.html">Buscar</a>
-        </div>
+      <div class="content">
+        <h2>Buscar Interno</h2>
+        <br>
+        <form>
+          <div class="form-row">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
+          </div>
+          <br>
+          <div style="width: 300px;" class="form-row">
+            <label for="vulgo">Vulgo:</label>
+            <input type="text" id="vulgo">
+          </div>
+          <br>
+          <div style="width: 300px;" class="form-row">
+            <label for="cpf">CPF:</label>
+            <input type="number" id="cpf">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="mae">Mãe:</label>
+            <input type="text" id="mae">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="pai">Pai:</label>
+            <input type="text" id="pai">
+          </div>
+          <br>
+          <div class="form-row">
+            <div class="form-row">
+              <label for="status">Status: </label>
+            </div>
+            <div class="form-row" style="display: flex; flex-direction: row;">
+              <input type="radio" name="status" id="ativo" value="ativo">
+              <label for="ativo" style="margin-right: 10px;">Ativo</label>
+              <input type="radio" name="status" id="inativo" value="inativo">
+              <label for="inativo">Inativo</label>
+            </div>
+            <hr>
+          </div>
+
+          <button class="btn-buscar">Buscar</button>
+        </form>
       </div>
 
+      <div class="content">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Vulgo</th>
+              <th>CPF</th>
+              <th>Unidade</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>João batista de sousa</td>
+              <td>Joãozinho</td>
+              <td>12345678901</td>
+              <td>CAPMCO</td>
+              <td>Ativo</td>
+              <td class="edit-icon" onclick="openModal()">
+                <a href="./edit-interno.html"><i class="fas fa-pen"></i></a>
+              </td>
+              <td class="edit-icon">
+                <a href="./view-interno.html"><i class="fas fa-eye"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>João Eduardo da silva</td>
+              <td>Mary</td>
+              <td>98765432103</td>
+              <td>CDPDLS</td>
+              <td>Inativo</td>
+              <td class="edit-icon">
+                <i class="fas fa-pen"></i>
+              </td>
+              <td class="edit-icon">
+                <i class="fas fa-eye"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>João barreto barros da cruz</td>
+              <td>Luquinhas</td>
+              <td>56789012324</td>
+              <td>PAMS</td>
+              <td>Ativo</td>
+              <td class="edit-icon">
+                <i class="fas fa-pen"></i>
+              </td>
+              <td class="edit-icon">
+                <i class="fas fa-eye"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div id="modal" class="modal-edit">
+      <div class="modal-edit-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Dados do Interno</h2>
+        <!-- Adicione aqui os campos para edição dos dados -->
+
+        <button id="btn-salvar-modal" onclick="saveChanges()">Salvar</button>
+      </div>
     </div>
 
     <script src="../js/script.js"></script>

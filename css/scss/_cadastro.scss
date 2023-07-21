@@ -34,6 +34,12 @@
   margin-top: 300px !important;
 }
 
+.btn-adicionar {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}
+
 
 // multstep
 .step {
@@ -48,7 +54,7 @@
 .button-container {
   position: absolute;
   right: 0;
-  top: 10px;
+  bottom: 0px;
   button{
     font-size: 11px;
     padding: 5px;

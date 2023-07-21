@@ -20,9 +20,11 @@
       <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
       <ul>
         <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-        <li><a href="./buscar.html"><i class="fas fa-search"></i>Buscar</a></li>
+        <li><a href="./buscar.html"><i class="fas fa-search"></i>Buscar Interno</a></li>
         <li><a style="color: #007932" href="./cadastro.html"><i
               class="fas fa-pen"></i>Cadastro &#9001; voltar</a></li>
+        <li><a href="./busca-unidade.html"><i class="fas fa-hotel"></i>Unidades</a></li>
+        <li><a href="./busca-usuario.html"><i class="fas fa-user"></i>Usuários</a></li>
         <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
         <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
       </ul>
@@ -84,7 +86,7 @@
             </div>
           </div>
 
-          <div class="form-rigth">
+          <div class="form-right">
             <div class="form-row">
               <label for="faccao">Facção:</label>
               <div class="checkbox-group">
@@ -144,9 +146,10 @@
 
       <div class="content"> <!--Restante dos dados, ADM e demais-->
         <form id="multistep-form">
+
           <div class="step active" id="step1">
             <h2>Endereço</h2>
-            <div class="cadastro-form">
+            <div class="content cadastro-form">
               <div class="form-left">
                 <div class="form-row">
                   <input type="text" id="endereco" placeholder="Logradouro"><br>
@@ -154,12 +157,59 @@
                   <input type="text" id="bairro" placeholder="Bairro"><br>
                 </div>
               </div>
-              <div class="form-rigth">
+              <div class="form-right">
                 <div class="form-row">
                   <input type="text" id="cidade" placeholder="Cidade"><br>
                   <input type="text" id="estado" placeholder="Estado"><br>
                   <input type="text" id="complemento" placeholder="Complemento">
                 </div>
+              </div>
+              <button class="btn-adicionar">Adicionar</button>
+            </div>
+            
+            <div class="content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Logradouro</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Rua Projetada, 3000</td>
+                    <td>Teresina</td>
+                    <td>Piauí</td>
+                    <td class="edit-icon" onclick="openModal()">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon" onclick="openModalView()">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Av. Miguel rosa, 2122</td>
+                    <td>Teresina</td>
+                    <td>Piauí</td>
+                    <td class="edit-icon">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="modal" class="modal-edit">
+              <div class="modal-edit-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Endereço</h2>
+                <!-- Adicione aqui os campos para edição dos dados -->
+
+                <button id="btn-salvar-modal" onclick="saveChanges()">Salvar</button>
               </div>
             </div>
 
@@ -170,10 +220,10 @@
 
           <div class="step" id="step2">
             <h2>Processos</h2>
-            <div class="cadastro-form">
+            <div class="content cadastro-form">
               <div class="form-left">
                 <div class="form-row">
-                  <label for="processo">Numero:</label>
+                  <label for="processo">Número:</label>
                   <input type="number" id="processo"
                     placeholder="Número do processo">
                 </div>
@@ -186,7 +236,7 @@
                   <input type="text" id="jurisdicao">
                 </div>
               </div>
-              <div class="form-rigth">
+              <div class="form-right">
                 <div class="form-row">
                   <label for="regime">Tipo de regime:</label>
                   <select id="regime">
@@ -210,7 +260,67 @@
                   <input type="text" id="jurisdicao">
                 </div>
               </div>
+              <button class="btn-adicionar">Adicionar</button>
             </div>
+
+            <div class="content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Número</th>
+                    <th>Crime</th>
+                    <th>Vara/Comarca</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1234567890</td>
+                    <td>Furto</td>
+                    <td>Teresina</td>
+                    <td class="edit-icon" onclick="openModal2()">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon" onclick="openModalView2()">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>0987654321</td>
+                    <td>Roubo</td>
+                    <td>Teresina</td>
+                    <td class="edit-icon">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>0987654321</td>
+                    <td>Roubo</td>
+                    <td>Teresina</td>
+                    <td class="edit-icon">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="modal2" class="modal-edit">
+              <div class="modal-edit-content">
+                <span class="close" onclick="closeModal2()">&times;</span>
+                <h2>Processos</h2>
+                <!-- Adicione aqui os campos para edição dos dados -->
+
+                <button id="btn-salvar-modal2" onclick="saveChanges()">Salvar</button>
+              </div>
+            </div>
+
+
             <div class="button-container">
               <button type="button" onclick="previousStep(1)">Voltar</button>
               <button type="button" onclick="nextStep(3)">Avançar</button>
@@ -220,7 +330,7 @@
 
           <div class="step" id="step3">
             <h2>Documentos</h2>
-            <div class="cadastro-form" style="justify-content: space-between;">
+            <div class="content cadastro-form" style="justify-content: space-between;">
               <div class="form-left" style="width: 50%;">
                 <label for="tipo-documento">Tipo de Documento:</label>
                 <select id="tipo-documento">
@@ -230,13 +340,71 @@
                   <option value="habilitacao">Habilitação</option>
                 </select>
 
+                <div class="form-row">
+                  <label for="descricao">Descrição do documento:</label>
+                  <input type="text" id="descricao">
+                </div>
+
                 <input type="file" id="documento">
-                <button style="width: 100px;" type="button"
-                  onclick="adicionarDocumento()">Adicionar</button>
+                <button id="btn-adcionar" type="button">Adicionar</button>
               </div>
+            </div>
 
-              <ul class="document-list" id="lista-documentos"></ul>
+            <div class="content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome do documento</th>
+                    <th>Descrição</th>
+                    <th>Tipo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Identidade</td>
+                    <td>Descrição da identidade</td>
+                    <td>identidade.jpg</td>
+                    <td class="edit-icon" onclick="openModal3()">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon" onclick="openModalView3()">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>CPF</td>
+                    <td>descricao do CPF</td>
+                    <td>cpf.jpg</td>
+                    <td class="edit-icon">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Alvará soltura</td>
+                    <td>Descrição do documento</td>
+                    <td>alvara.pdf</td>
+                    <td class="edit-icon">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                    <td class="edit-icon">
+                      <i class="fas fa-eye"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
+            <div id="modal3" class="modal-edit">
+              <div class="modal-edit-content">
+                <span class="close" onclick="closeModal3()">&times;</span>
+                <h2>Documentos</h2>
+                <!-- Adicione aqui os campos para edição dos dados -->
+
+                <button id="btn-salvar-modal3" onclick="saveChanges()">Salvar</button>
+              </div>
             </div>
 
             <div class="button-container">
@@ -248,7 +416,7 @@
           <div class="step" id="step4">
             <h2>Outros</h2>
             <label>Outras informações</label>
-            <div class="cadastro-form">
+            <div class="content cadastro-form">
               <textarea style="width: 100%; height: 50px;"></textarea>
             </div>
 

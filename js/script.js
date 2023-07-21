@@ -82,42 +82,42 @@ function addPhoto() {
   document.getElementById("photoFile").value = "";
 }
 
-// Incluir documentos
-function adicionarDocumento() {
-  const tipoDocumento = document.getElementById("tipo-documento").value;
-  const documentoInput = document.getElementById("documento");
-  const documento = documentoInput.files[0];
-
-  if (documento) {
-    const listItem = document.createElement("li");
-    listItem.classList.add("document-list-item");
-
-    const tipoDocumentoSpan = document.createElement("span");
-    tipoDocumentoSpan.textContent = tipoDocumento + ": ";
-
-    const label = document.createElement("label");
-    label.textContent = documento.name;
-
-    listItem.appendChild(tipoDocumentoSpan);
-    listItem.appendChild(label);
-    document.getElementById("lista-documentos").appendChild(listItem);
-
-    documentoInput.value = ""; // Limpar o campo do arquivo após adicionar o documento
-  }
-}
 
 // Modal
 function openModal() {
   document.getElementById("modal").style.display = "block";
 }
+function openModal2() {
+  document.getElementById("modal2").style.display = "block";
+}
+function openModal3() {
+  document.getElementById("modal3").style.display = "block";
+}
 
 function closeModal() {
   document.getElementById("modal").style.display = "none";
+  document.getElementById("btn-salvar-modal").style.display = "block";
+}
+function closeModal2() {
+  document.getElementById("modal2").style.display = "none";
+  document.getElementById("btn-salvar-modal2").style.display = "block";
+}
+function closeModal3() {
+  document.getElementById("modal3").style.display = "none";
+  document.getElementById("btn-salvar-modal3").style.display = "block";
 }
 
 function openModalView() {
   document.getElementById("modal").style.display = "block";
   document.getElementById("btn-salvar-modal").style.display = "none";
+}
+function openModalView2() {
+  document.getElementById("modal2").style.display = "block";
+  document.getElementById("btn-salvar-modal2").style.display = "none";
+}
+function openModalView3() {
+  document.getElementById("modal3").style.display = "block";
+  document.getElementById("btn-salvar-modal3").style.display = "none"; 
 }
 
 function saveChanges() {
@@ -125,6 +125,7 @@ function saveChanges() {
 
   closeModal();
 }
+
 
 // Grafico
 
@@ -150,7 +151,7 @@ const data = {
   datasets: [
     {
       label: "Quantidade de Internos por unidade",
-      data: [500, 1500, 800, 1200, 960, 1000, 790, 555, 390, 450, 930, 990,340,500,620],
+      data: [500, 1500, 800, 1200, 960, 1000, 790, 555, 390, 450, 930, 990, 340, 500, 620],
       backgroundColor: ["#007932"],
     },
   ],
