@@ -1,5 +1,5 @@
 .card {
-  width: calc(33.33% - 10px);
+  width: 350px;
   margin-bottom: 20px;
   border-radius: 8px;
   border-right: 5px solid $verde;
@@ -63,8 +63,7 @@
 
 .content-cadastro {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 30px;
 }
 
 

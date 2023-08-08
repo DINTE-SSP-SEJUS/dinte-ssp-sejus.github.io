@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <title>Cadastro - Usuário</title>
+  <title>Editar Unidade - SIAPEN</title>
 </head>
 
 <body>
@@ -21,9 +21,10 @@
     <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
     <ul>
       <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-      <li><a href="./buscar.html"><i class="fas fa-pen"></i>Internos</a></li>
+      </li>
+      <li><a href="./internos.html"><i class="fas fa-pen"></i>Internos</a></li>
       <li><a href="./unidades.html"><i class="fas fa-hotel"></i>Unidades</a></li>
-      <li><a style="color: #329542" href="./usuarios.html"><i class="fas fa-user"></i>Usuários &#9001; voltar</a></li>
+      <li><a style="color: #329542"  href="./usuarios.html"><i class="fas fa-user"></i>Usuários &#9001 Voltar</a></li>
     </ul>
 
     <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
@@ -32,63 +33,64 @@
       <span>&#9776;</span>
     </div>
 
-    <button id="logout"><a style="color: #ccc" href="../index.html">Sair</a></button>
+    <button id="logout">Sair</button>
   </div>
 
   <div class="container">
-    <div class="modal-content content">
-      <h2>Cadastrar Usuário</h2>
+    <h2>Editar Usuário</h2>
+
+    <div class="content">
       <form style="padding: 30px 30px 0px 30px;" class="form-container">
         <div class="cadastro-form">
           <div class="form-left">
             <div class="form-row">
               <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome">
+              <input type="text" id="nome" name="nome" placeholder="João batista de sousa">
             </div>
             <div class="form-row">
               <label for="cpf">CPF:</label>
-              <input style="width: 300px;" type="number" id="cpf" name="cpf">
+              <input style="width: 300px;" type="number" id="cpf" name="cpf" placeholder="12345678903">
             </div>
             <div class="form-row">
               <label for="unidade">Orgão:</label>
-              <input style="width: 300px;" type="text" id="unidade" name="unidade">
+              <input style="width: 300px;" type="text" id="unidade" name="unidade" placeholder="CAPMCO">
             </div>
             <div class="form-row">
               <label for="cargo">Função:</label>
-              <input style="width: 300px;" type="text" id="cargo" name="cargo">
+              <input style="width: 300px;" type="text" id="cargo" name="cargo" placeholder="Assessor">
             </div>
             <div class="form-row">
               <label for="area-atuacao">Vínculo:</label>
-              <input style="width: 300px;" type="text" id="area-atuacao" name="area-atuacao">
+              <input style="width: 300px;" type="text" id="area-atuacao" name="area-atuacao" placeholder="Contrato">
             </div>
           </div>
           <div class="form-right">
             <div class="form-row">
               <label for="matricula">Matrícula:</label>
-              <input style="width: 400px;" type="number" id="matricula" name="matricula">
+              <input style="width: 400px;" type="number" id="matricula" name="matricula" placeholder="4569203">
             </div>
             <br>
             <div class="form-row">
               <label for="email">Email:</label>
-              <input style="width: 400px;" type="text" id="email" name="email">
+              <input style="width: 400px;" type="text" id="email" name="email" placeholder="email@email.com.br">
             </div>
             <div class="form-row">
               <label for="telefone">Telefone:</label>
-              <input style="width: 400px;" type="text" id="telefone" name="telefone">
+              <input style="width: 400px;" type="text" id="telefone" name="telefone" placeholder="86 9 555-5555">
             </div>
             <br>
             <div class="form-row">
               <label for="login">Login:</label>
-              <input style="width: 400px;" type="text" id="login" name="login">
+              <input style="width: 400px;" type="text" id="login" name="login" placeholder="12345678903">
             </div>
             <div class="form-row">
               <label for="senha">Senha:</label>
-              <input style="width: 400px;" type="number" id="senha" name="senha">
+              <input style="width: 400px;" type="number" id="senha" name="senha" placeholder="********">
             </div>
           </div>
         </div>
         <div>
-          <button style="float: right; margin-top: 10px;">Cadastrar</button>
+          <button style="float: right; margin-top: 10px;">Atualizar</button>
         </div>
       </form>
     </div>

@@ -1,201 +1,293 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Internos - SIAPEN</title>
-  </head>
-  <body>
 
-    <div class="header">
-      <h3>Olá</h3>
-      <span>Roberto Carlos de sousa</span>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Internos - SIAPEN</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <h3>Olá</h3>
+    <span>Roberto Carlos de sousa</span>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
+    <ul>
+      <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li></li>
+      <li><a style="color: #329542" href="./internos.html"><i class="fas fa-pen"></i>Internos &#9001 Voltar</a></li>
+      <li><a href="./unidades.html"><i class="fas fa-hotel"></i>Unidades</a></li>
+      <li><a href="./usuarios.html"><i class="fas fa-user"></i>Usuários</a></li>
+    </ul>
+
+    <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+
+    <div class="menu-icon" onclick="toggleSidebar()">
+      <span>&#9776;</span>
     </div>
 
-    <div class="sidebar" id="sidebar">
-      <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
-      <ul>
-        <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-        <li><a style="color: #329542" href="./buscar.html"><i
-              class="fas fa-search"></i>Buscar Interno << </a></li>
-        <li><a href="./cadastro.html"><i class="fas fa-pen"></i>Cadastro</a></li>
-        <li><a href="./busca-unidade.html"><i class="fas fa-hotel"></i>Unidades</a></li>
-        <li><a href="./busca-usuario.html"><i class="fas fa-user"></i>Usuários</a></li>
-        <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
-        <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
-      </ul>
+    <button id="logout">Sair</button>
+  </div>
 
-      <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+  <div class="container">
 
-      <div class="menu-icon" onclick="toggleSidebar()">
-        <span>&#9776;</span>
+    <div class="content">
+      <h2>Dados do interno</h2>
+      <h3 style="margin-top: 30px;">Fotos</h3>
+      <div class="content-fotos">
+        <div class="content-fotos-left">
+          <img id="icon-user-fotos"
+            src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=200"></img>
+        </div>
+
+        <div class="content-fotos-right">
+          <div>
+            <img
+              src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
+            <h6>Foto Perfil</h6>
+          </div>
+          <div>
+            <img
+              src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
+            <h6>Foto tatuagem</h6>
+          </div>
+          <div>
+            <img
+              src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
+            <h6>Foto corpo</h6>
+          </div>
+          <div>
+            <img
+              src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
+            <h6>Foto costas</h6>
+          </div>
+
+        </div>
       </div>
-
-      <button id="logout">Sair</button>
     </div>
 
-    <div class="container">
-
-      <div class="content">
-        <h2>Dados do interno</h2>
-        <h3 style="margin-top: 30px;">Fotos</h3>
-        <div class="content-fotos">
-          <div class="content-fotos-left">
-            <img id="icon-user-fotos" src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=200"></img>
-          </div>
-
-          <div class="content-fotos-right">
-            <div>
-              <img src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
-              <h6>Foto Perfil</h6>
-            </div>
-            <div>
-              <img src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
-              <h6>Foto tatuagem</h6>
-            </div>
-            <div>
-              <img src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
-              <h6>Foto corpo</h6>
-            </div>
-            <div>
-              <img src="https://img.freepik.com/vetores-premium/ilustracao-de-um-jovem-elegante-homem-barbudo-bonito-dos-desenhos-animados-avatar-de-perfil-moderno_15870-758.jpg?w=70">
-              <h6>Foto costas</h6>
-            </div>
- 
-          </div>
+    <div class="content">
+      <h3 style="margin-bottom: 10px;">Dados gerais</h3>
+      <div class="content-dados">
+        <div style="border: none;" class="ul-left form-row">
+          <label>Nome</label>
+          <input placeholder="Joao batista de sousa" disabled>
+          <label>Vulgo</label>
+          <input placeholder="Joãozinho fulano" disabled>
+          <label>CPF</label>
+          <input placeholder="009.234.567-98" disabled>
+          <label>RG</label>
+          <input placeholder="467010" disabled>
+          <label>Orgão emissor</label>
+          <input placeholder="ssp/pi" disabled>
+          <label> Data de Nascimento</label>
+          <input placeholder="21/03/1981" disabled>
+        </div>
+        <div style="border: none;" class="ul-right form-row">
+          <label>Nacionalidade</label>
+          <input placeholder="Brasileiro" disabled>
+          <label>Naturalidade</label>
+          <input placeholder="Teresina" disabled>
+          <label>Facção</label>
+          <input placeholder="Bonde dos 40 " disabled>
+          <label>Biometrização</label>
+          <input placeholder="NÃO" disabled>
         </div>
       </div>
+    </div>
 
-      <div class="content">
-        <h3 style="margin-bottom: 10px;">Dados gerais</h3>
-        <div class="content-dados">
-          <ul class="ul-left">
-            <h5>Nome</h5>
-            <p>Joao batista de sousa</p>
-            <h5>Vulgo</h5>
-            <p>Joãozinho fulano</p>
-            <h5>CPF</h5>
-            <p>009.234.567-98</p>
-            <h5>RG</h5>
-            <p>467010</p>
-            <h5>Orgão emissor</h5>
-            <p>ssp/pi</p>
-            <h5>Data de Nascimento</h5>
-            <p>21/03/1981</p>
-          </ul>
-          <ul class="ul-right">
-            <h5>Nacionalidade</h5>
-            <p>Brasileiro</p>
-            <h5>Naturalidade</h5>
-            <p>Teresina</p>
-            <h5>Facção</h5>
-            <p>Bonde dos 40</p>
-            <h5>Biometrização</h5>
-            <p>NÃO</p>
-          </ul>
-        </div>
-      </div>
-
-      <div class="content">
-        <h3 style="margin-bottom: 10px;">Endereço</h3>
-        <div class="content-endereco">
-          <ul class="ul-left">
-            <h4>Endereço 1</h4>
-            <h5>Logradouro</h5>
-            <p>Rua projetada, 3000</p>
-            <h5>Bairro</h5>
-            <p>Vila Jerusalem</p>
-            <h5>CEP</h5>
-            <p>64023-650</p>
-            <h5>Cidade</h5>
-            <p>Teresina</p>
-            <h5>Estado</h5>
-            <p>Piauí</p>
-            <h5>Complemento</h5>
-            <p>Atras da rua vinte e nove</p>
-          </ul>
-          <ul class="ul-right">
-            <h4>Endereço 2</h4>
-            <h5>Logradouro</h5>
-            <p>Av. Miguel rosa, 2122/p>
-            <h5>Bairro</h5>
-            <p>Macaúba</p>
-            <h5>Cidade</h5>
-            <p>Teresina</p>
-            <h5>Estado</h5>
-            <p>Piauí</p>
-          </ul>
-        </div>
-      </div>
-
-      <div class="content">
-        <h3 style="margin-bottom: 10px;">Processoas</h3>
-        <div class="content-processos">
-          <ul class="ul-left">
-            <h4>Processo 1</h4>
-            <h5>Numero</h5>
-            <p>123456789</p>
-            <h5>Tipificação penal</h5>
-            <p>157</p>
-            <h5>Crime (Tipo)</h5>
-            <p>Roubo</p>
-          </ul>
-          <ul class="ul-right">
-            <h4>Processo 2</h4>
-            <h5>Tipo de regime</h5>
-            <p>Provisório</p>
-            <h5>Representação</h5>
-            <p>Advogado</p>
-            <h5>Vara/Comarca</h5>
-            <p>Teresina</p>
-          </ul>
-        </div>
-      </div>
-
-      <div class="content">
-        <h3 style="margin-bottom: 20px;">Documentos</h3>
+    <div class="content">
+      <h3 style="margin-bottom: 10px;">Endereço</h3>
+      <div class="content-endereco">
         <table>
           <thead>
             <tr>
-              <th>Nome do documento</th>
-              <th>Descrição</th>
-              <th>Tipo</th>
+              <th>Logradouro</th>
+              <th>Cidade</th>
+              <th>Estado</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Identidade</td>
-              <td>Descrição da identidade</td>
-              <td>identidade.jpg</td>
-              <td class="edit-icon">
-                <i class="fas fa-file"></i>
+              <td>Rua Projetada, 3000</td>
+              <td>Teresina</td>
+              <td>Piauí</td>
+              <td class="edit-icon" onclick="openModalView()">
+                <i class="fas fa-eye"></i>
               </td>
             </tr>
             <tr>
-              <td>CPF</td>
-              <td>descricao do CPF</td>
-              <td>cpf.jpg</td>
+              <td>Av. Miguel rosa, 2122</td>
+              <td>Teresina</td>
+              <td>Piauí</td>
               <td class="edit-icon">
-                <i class="fas fa-file"></i>
-              </td>
-            <tr>
-              <td>Alvará soltura</td>
-              <td>Descrição do documento</td>
-              <td>alvara.pdf</td>
-              <td class="edit-icon">
-                <i class="fas fa-file"></i>
+                <i class="fas fa-eye"></i>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
 
+      <div id="modal" class="modal-edit">
+        <div class="modal-edit-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Endereço</h2>
+          <div class="content cadastro-form">
+            <div class="form-left">
+              <div class="form-row">
+                <label for="endereco">Logradouro</label>
+                <input type="text" id="endereco" placeholder="Rua projetada, 3000"><br>
+                <label for="cep">CEP</label>
+                <input type="number" id="cep" placeholder="64023-650"><br>
+                <label for="bairro">Birro</label>
+                <input type="text" id="bairro" placeholder="Vila Jerusalem"><br>
+              </div>
+            </div>
+            <div class="form-right">
+              <div class="form-row">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" placeholder="Teresina"><br>
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" placeholder="Piauí"><br>
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" placeholder="Atras da rua vinte e nove">
+              </div>
+            </div>
+          </div>
+
+          <button id="btn-salvar-modal" onclick="saveChanges()">Atualizar</button>
+        </div>
+      </div>
     </div>
 
-    <script src="../js/script.js"></script>
-  </body>
+    <div class="content">
+      <h3 style="margin-bottom: 10px;">Processos</h3>
+      <div class="content-processos">
+        <table>
+          <thead>
+            <tr>
+              <th>Número</th>
+              <th>Crime</th>
+              <th>Vara/Comarca</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1234567890</td>
+              <td>Furto</td>
+              <td>Teresina</td>
+
+              <td class="edit-icon" onclick="openModalView2()">
+                <i class="fas fa-eye"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>0987654321</td>
+              <td>Roubo</td>
+              <td>Teresina</td>
+
+              <td class="edit-icon">
+                <i class="fas fa-eye"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>0987654321</td>
+              <td>Roubo</td>
+              <td>Teresina</td>
+
+              <td class="edit-icon">
+                <i class="fas fa-eye"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="modal2" class="modal-edit">
+        <div class="modal-edit-content">
+          <span class="close" onclick="closeModal2()">&times;</span>
+          <h2>Processo</h2>
+          <div class="content cadastro-form">
+            <div class="form-left">
+              <div class="form-row">
+                <label for="processo">Número:</label>
+                <input type="number" id="processo" placeholder="1234567890">
+              </div>
+              <div class="form-row">
+                <label for="jurisdicao">Tipificação penal:</label>
+                <input type="text" id="jurisdicao" placeholder="175">
+              </div>
+              <div class="form-row">
+                <label for="tipo">Crime(tipo):</label>
+                <input type="text" id="tipo" placeholder="Roubo">
+              </div>
+            </div>
+            <div class="form-right">
+              <div class="form-row">
+                <label for="regime">Tipo de regime:</label>
+                <input id="regime" placeholder="Provisório">
+              </div>
+              <div class="form-row">
+                <label for="representacao">Representação:</label>
+                <input id="representacao" placeholder="Advogado">
+              </div>
+              <div class="form-row">
+                <label for="comarca">Vara/Comarca:</label>
+                <input type="text" id="comarca" placeholder="Teresina">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h3 style="margin-bottom: 20px;">Documentos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome do documento</th>
+            <th>Descrição</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Identidade</td>
+            <td>Descrição da identidade</td>
+            <td>identidade.jpg</td>
+            <td class="edit-icon">
+              <i class="fas fa-file"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>CPF</td>
+            <td>descricao do CPF</td>
+            <td>cpf.jpg</td>
+            <td class="edit-icon">
+              <i class="fas fa-file"></i>
+            </td>
+          <tr>
+            <td>Alvará soltura</td>
+            <td>Descrição do documento</td>
+            <td>alvara.pdf</td>
+            <td class="edit-icon">
+              <i class="fas fa-file"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
 </html>

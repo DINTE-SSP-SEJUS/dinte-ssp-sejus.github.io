@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <title>Dashboard - SIAPEN</title>
+  <title>Unidades - SIAPEN</title>
 </head>
 
 <body>
@@ -20,9 +20,9 @@
   <div class="sidebar" id="sidebar">
     <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
     <ul>
-      <li><a style="color: #329542" href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+      <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
       <li><a href="./internos.html"><i class="fas fa-pen"></i>Internos</a></li>
-      <li><a href="./unidades.html"><i class="fas fa-hotel"></i>Unidades</a></li>
+      <li><a style="color: #329542" href="./unidades.html"><i class="fas fa-hotel"></i>Unidades</a></li>
       <li><a href="./usuarios.html"><i class="fas fa-user"></i>Usuários</a></li>
     </ul>
 
@@ -32,41 +32,34 @@
       <span>&#9776;</span>
     </div>
 
-    <button id="logout"><a style="color: #ccc" href="../index.html">Sair</a></button>
+    <button id="logout">Sair</button>
   </div>
 
   <div class="container">
-    <div class="content">
-      <div class="content-card-dash">
-        <div class="card-dash" onclick="window.location.href='#'">
-          <h3>Total internos</h3>
-          <p>9380</p>
-        </div>
 
-        <div class="card-dash" onclick="window.location.href='#'">
-          <h3>Internos ativos</h3>
-          <p>5030</p>
-        </div>
-
-        <div class="card-dash" onclick="window.location.href='#'">
-          <h3>Internos inativos</h3>
-          <p>3048</p>
-        </div>
-
-        <div class="card-dash" onclick="window.location.href='#'">
-          <h3>Unidades</h3>
-          <p>17</p>
-        </div>
+    <div class="content content-cadastro">
+      <div class="card">
+        <h3>Listar Unidades</h3>
+        <a class="button-a" href="../pages/busca-unidade.html">Buscar</a>
       </div>
+      <div class="card">
+        <h3>Cadastrar Unidade</h3>
+        <a class="button-a" href="../pages/cadastro-unidade.html">Cadastrar</a>
+      </div>
+    </div>
 
-      <canvas id="chart"></canvas>
+    <div id="modal" class="modal-edit">
+      <div class="modal-edit-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Dados da Unidade</h2>
+        <!-- Adicione aqui os campos para edição dos dados -->
+
+        <button id="btn-salvar-modal" onclick="saveChanges()">Salvar</button>
+      </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <script src="../js/script.js"></script>
-
 </body>
 
 </html>

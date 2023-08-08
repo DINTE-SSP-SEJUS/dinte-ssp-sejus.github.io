@@ -1,436 +1,381 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Cadastro - Interno</title>
-  </head>
-  <body>
 
-    <div class="header">
-      <h3>Olá</h3>
-      <span>Roberto Carlos de sousa</span>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Cadastro - Interno</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <h3>Olá</h3>
+    <span>Roberto Carlos de sousa</span>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
+    <ul>
+      <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+      <li><a style="color: #007932" href="./internos.html"><i class="fas fa-pen"></i>Internos &#9001 Voltar</a></li>
+      <li><a href="./unidades.html"><i class="fas fa-hotel"></i>Unidades</a></li>
+      <li><a href="./usuarios.html"><i class="fas fa-user"></i>Usuários</a></li>
+    </ul>
+
+    <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+
+    <div class="menu-icon" onclick="toggleSidebar()">
+      <span>&#9776;</span>
     </div>
 
-    <div class="sidebar" id="sidebar">
-      <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
-      <ul>
-        <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-        <li><a href="./buscar.html"><i class="fas fa-search"></i>Buscar Interno</a></li>
-        <li><a style="color: #007932" href="./cadastro.html"><i
-              class="fas fa-pen"></i>Cadastro &#9001; voltar</a></li>
-        <li><a href="./busca-unidade.html"><i class="fas fa-hotel"></i>Unidades</a></li>
-        <li><a href="./busca-usuario.html"><i class="fas fa-user"></i>Usuários</a></li>
-        <li><a href="./permisoes.html"><i class="fas fa-lock"></i>Permissões</a></li>
-        <li><a href="./relatorios.html"><i class="fas fa-poll"></i>Relatórios</a></li>
-      </ul>
+    <button id="logout">Sair</button>
+  </div>
 
-      <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+  <div class="container">
 
-      <div class="menu-icon" onclick="toggleSidebar()">
-        <span>&#9776;</span>
-      </div>
-
-      <button id="logout">Sair</button>
-    </div>
-
-    <div class="container">
-
-      <div class="content"> <!--Plantão e chefe de diciplina -->
-        <h2>Cadastrar Interno</h2>
-        <br>
-        <form class="cadastro-form">
-          <div class="form-left">
-            <div class="form-row">
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome">
-            </div>
-            <div class="form-row">
-              <label for="vulgo">Vulgo:</label>
-              <input type="text" id="vulgo">
-            </div>
-            <div class="form-row">
-              <label for="cpf">CPF:</label>
-              <input type="number" id="cpf">
-            </div>
-            <div class="form-row">
-              <label for="rg">RG:</label>
-              <input type="number" id="rg">
-            </div>
-            <div class="form-row">
-              <label for="orgao">Orgão emissor:</label>
-              <input type="text" id="orgao">
-            </div>
-            <div class="form-row">
-              <label for="data-nascimento">Data de Nascimento:</label>
-              <input type="date" id="data-nascimento">
-            </div>
-            <div class="form-row">
-              <label for="nacionalidade">Nacionalidade:</label>
-              <select id="nacionalidade" onchange="changeOptions()">
-                <option value="selecione">Selecione</option>
-                <option value="brasileiro">Brasileiro</option>
-                <option value>Colombiano</option>
-                <option value>Venezuelano</option>
-                <option value>Argentino</option>
-                <option value>Paraguaio</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="naturalidade">Naturalidade:</label>
-              <select id="naturalidade"></select>
-            </div>
-          </div>
-
-          <div class="form-right">
-            <div class="form-row">
-              <label for="faccao">Facção:</label>
-              <div class="checkbox-group">
-                <select type="text" id="nome-faccao">
-                  <option>Não Participa</option>
-                  <option>PCC</option>
-                  <option>CV</option>
-                  <option>Bonde dos 40</option>
-                  <option>Familia do norte</option>
-                </select>
-                <br>
-              </div>
-            </div>
-            <div class="form-row">
-              <label for="biometrizacao">Biometrização:</label>
-              <div>
-                <input type="radio" id="biometrizacao-sim"
-                  name="biometrizacao">
-                <label for="biometrizacao-sim">Sim</label>
-                <input type="radio" id="biometrizacao-nao"
-                  name="biometrizacao">
-                <label for="biometrizacao-nao">Não</label>
-              </div>
-            </div>
-            <br>
-            <div class="form-row">
-              <h2>Fotos</h2>
-              <label for="photoType">Tipo de Foto:</label>
-              <select id="photoType">
-                <option value="Perfil">Selcione</option>
-                <option value="Perfil">Perfil</option>
-                <option value="Corpo">Corpo</option>
-                <option value="Braço Direito">Braço Direito</option>
-                <option value="Perna">Perna</option>
-                <option value="Costas">Costas</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="photoDescription">Descrição:</label>
-              <input type="text" id="photoDescription">
-            </div>
-            <div class="form-row" style="position: relative;">
-              <label for="photoFile">Selecionar Foto:</label>
-              <input type="file" id="photoFile" accept="image/*">
-              <button id="incluir-foto" type="button" onclick="addPhoto()">Incluir</button>
-            </div>
-
-            <div class="form-row" id="thumbnailContainer"></div>
-            <div class="form-row image-list" id="photoList"></div>
-
+    <div class="content"> <!--Plantão e chefe de diciplina -->
+      <h2>Cadastrar Interno</h2>
+      <br>
+      <form class="cadastro-form">
+        <div class="form-left">
+          <div class="form-row">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
           </div>
           <div class="form-row">
-            <button class="btn-cadastrar">Cadastrar</button>
+            <label for="vulgo">Vulgo:</label>
+            <input type="text" id="vulgo">
           </div>
-        </form>
-      </div>
+          <div class="form-row">
+            <label for="cpf">CPF:</label>
+            <input type="number" id="cpf">
+          </div>
+          <div class="form-row">
+            <label for="rg">RG:</label>
+            <input type="number" id="rg">
+          </div>
+          <div class="form-row">
+            <label for="orgao">Orgão emissor:</label>
+            <input type="text" id="orgao">
+          </div>
+          <div class="form-row">
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento">
+          </div>
+          <div class="form-row">
+            <label for="nacionalidade">Nacionalidade:</label>
+            <select id="nacionalidade" onchange="changeOptions()">
+              <option value="selecione">Selecione</option>
+              <option value="brasileiro">Brasileiro</option>
+              <option value>Colombiano</option>
+              <option value>Venezuelano</option>
+              <option value>Argentino</option>
+              <option value>Paraguaio</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="naturalidade">Naturalidade:</label>
+            <select id="naturalidade"></select>
+          </div>
+        </div>
 
-      <div class="content"> <!--Restante dos dados, ADM e demais-->
-        <form id="multistep-form">
-
-          <div class="step active" id="step1">
-            <h2>Endereço</h2>
-            <div class="content cadastro-form">
-              <div class="form-left">
-                <div class="form-row">
-                  <input type="text" id="endereco" placeholder="Logradouro"><br>
-                  <input type="number" id="cep" placeholder="CEP"><br>
-                  <input type="text" id="bairro" placeholder="Bairro"><br>
-                </div>
-              </div>
-              <div class="form-right">
-                <div class="form-row">
-                  <input type="text" id="cidade" placeholder="Cidade"><br>
-                  <input type="text" id="estado" placeholder="Estado"><br>
-                  <input type="text" id="complemento" placeholder="Complemento">
-                </div>
-              </div>
-              <button class="btn-adicionar">Adicionar</button>
-            </div>
-            
-            <div class="content">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Logradouro</th>
-                    <th>Cidade</th>
-                    <th>Estado</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Rua Projetada, 3000</td>
-                    <td>Teresina</td>
-                    <td>Piauí</td>
-                    <td class="edit-icon" onclick="openModal()">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon" onclick="openModalView()">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Av. Miguel rosa, 2122</td>
-                    <td>Teresina</td>
-                    <td>Piauí</td>
-                    <td class="edit-icon">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div id="modal" class="modal-edit">
-              <div class="modal-edit-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Endereço</h2>
-                <!-- Adicione aqui os campos para edição dos dados -->
-
-                <button id="btn-salvar-modal" onclick="saveChanges()">Salvar</button>
-              </div>
-            </div>
-
-            <div class="button-container">
-              <button type="button" onclick="nextStep(2)">Avançar</button>
+        <div class="form-right">
+          <div class="form-row">
+            <label for="faccao">Facção:</label>
+            <div class="checkbox-group">
+              <select type="text" id="nome-faccao">
+                <option>Não Participa</option>
+                <option>PCC</option>
+                <option>CV</option>
+                <option>Bonde dos 40</option>
+                <option>Familia do norte</option>
+              </select>
+              <br>
             </div>
           </div>
-
-          <div class="step" id="step2">
-            <h2>Processos</h2>
-            <div class="content cadastro-form">
-              <div class="form-left">
-                <div class="form-row">
-                  <label for="processo">Número:</label>
-                  <input type="number" id="processo"
-                    placeholder="Número do processo">
-                </div>
-                <div class="form-row">
-                  <label for="jurisdicao">Tipificação penal:</label>
-                  <input type="text" id="jurisdicao">
-                </div>
-                <div class="form-row">
-                  <label for="jurisdicao">Crime(tipo):</label>
-                  <input type="text" id="jurisdicao">
-                </div>
-              </div>
-              <div class="form-right">
-                <div class="form-row">
-                  <label for="regime">Tipo de regime:</label>
-                  <select id="regime">
-                    <option>Selecionar</option>
-                    <option value="provisorio">Provisório</option>
-                    <option value="semiaberto">Sentenciado</option>
-                    <option value="provisorio-semiaberto">Provisorio e
-                      Sentenciado</option>
-                  </select>
-                </div>
-                <div class="form-row">
-                  <label for="representacao">Representação:</label>
-                  <select id="representacao">
-                    <option>Selecionar</option>
-                    <option value="advogado">Advogado</option>
-                    <option value="defensor">Defensor</option>
-                  </select>
-                </div>
-                <div class="form-row">
-                  <label for="jurisdicao">Vara/Comarca:</label>
-                  <input type="text" id="jurisdicao">
-                </div>
-              </div>
-              <button class="btn-adicionar">Adicionar</button>
-            </div>
-
-            <div class="content">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Número</th>
-                    <th>Crime</th>
-                    <th>Vara/Comarca</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1234567890</td>
-                    <td>Furto</td>
-                    <td>Teresina</td>
-                    <td class="edit-icon" onclick="openModal2()">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon" onclick="openModalView2()">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>0987654321</td>
-                    <td>Roubo</td>
-                    <td>Teresina</td>
-                    <td class="edit-icon">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>0987654321</td>
-                    <td>Roubo</td>
-                    <td>Teresina</td>
-                    <td class="edit-icon">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div id="modal2" class="modal-edit">
-              <div class="modal-edit-content">
-                <span class="close" onclick="closeModal2()">&times;</span>
-                <h2>Processos</h2>
-                <!-- Adicione aqui os campos para edição dos dados -->
-
-                <button id="btn-salvar-modal2" onclick="saveChanges()">Salvar</button>
-              </div>
-            </div>
-
-
-            <div class="button-container">
-              <button type="button" onclick="previousStep(1)">Voltar</button>
-              <button type="button" onclick="nextStep(3)">Avançar</button>
-            </div>
-
-          </div>
-
-          <div class="step" id="step3">
-            <h2>Documentos</h2>
-            <div class="content cadastro-form" style="justify-content: space-between;">
-              <div class="form-left" style="width: 50%;">
-                <label for="tipo-documento">Tipo de Documento:</label>
-                <select id="tipo-documento">
-                  <option>Selecionar</option>
-                  <option value="cpf">CPF</option>
-                  <option value="identidade">Identidade</option>
-                  <option value="habilitacao">Habilitação</option>
-                </select>
-
-                <div class="form-row">
-                  <label for="descricao">Descrição do documento:</label>
-                  <input type="text" id="descricao">
-                </div>
-
-                <input type="file" id="documento">
-                <button id="btn-adcionar" type="button">Adicionar</button>
-              </div>
-            </div>
-
-            <div class="content">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Nome do documento</th>
-                    <th>Descrição</th>
-                    <th>Tipo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Identidade</td>
-                    <td>Descrição da identidade</td>
-                    <td>identidade.jpg</td>
-                    <td class="edit-icon" onclick="openModal3()">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon" onclick="openModalView3()">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>CPF</td>
-                    <td>descricao do CPF</td>
-                    <td>cpf.jpg</td>
-                    <td class="edit-icon">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Alvará soltura</td>
-                    <td>Descrição do documento</td>
-                    <td>alvara.pdf</td>
-                    <td class="edit-icon">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                    <td class="edit-icon">
-                      <i class="fas fa-eye"></i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div id="modal3" class="modal-edit">
-              <div class="modal-edit-content">
-                <span class="close" onclick="closeModal3()">&times;</span>
-                <h2>Documentos</h2>
-                <!-- Adicione aqui os campos para edição dos dados -->
-
-                <button id="btn-salvar-modal3" onclick="saveChanges()">Salvar</button>
-              </div>
-            </div>
-
-            <div class="button-container">
-              <button type="button" onclick="previousStep(2)">Voltar</button>
-              <button type="button" onclick="nextStep(4)">Avançar</button>
+          <div class="form-row">
+            <label for="biometrizacao">Biometrização:</label>
+            <div>
+              <input type="radio" id="biometrizacao-sim" name="biometrizacao">
+              <label for="biometrizacao-sim">Sim</label>
+              <input type="radio" id="biometrizacao-nao" name="biometrizacao">
+              <label for="biometrizacao-nao">Não</label>
             </div>
           </div>
-
-          <div class="step" id="step4">
-            <h2>Outros</h2>
-            <label>Outras informações</label>
-            <div class="content cadastro-form">
-              <textarea style="width: 100%; height: 50px;"></textarea>
-            </div>
-
-            <div class="button-container">
-              <button type="button" onclick="previousStep(3)">Voltar</button>
-              <button>Cadastrar</button>
-            </div>
+          <br>
+          <div class="form-row">
+            <h2>Fotos</h2>
+            <label for="photoType">Tipo de Foto:</label>
+            <select id="photoType">
+              <option value="Perfil">Selcione</option>
+              <option value="Perfil">Perfil</option>
+              <option value="Corpo">Corpo</option>
+              <option value="Braço Direito">Braço Direito</option>
+              <option value="Perna">Perna</option>
+              <option value="Costas">Costas</option>
+            </select>
           </div>
-        </form>
-      </div>
+          <div class="form-row">
+            <label for="photoDescription">Descrição:</label>
+            <input type="text" id="photoDescription">
+          </div>
+          <div class="form-row" style="position: relative;">
+            <label for="photoFile">Selecionar Foto:</label>
+            <input type="file" id="photoFile" accept="image/*">
+            <button id="incluir-foto" type="button" onclick="addPhoto()">Incluir</button>
+          </div>
 
+          <div class="form-row" id="thumbnailContainer"></div>
+          <div class="form-row image-list" id="photoList"></div>
+
+        </div>
+        <div class="form-row">
+          <button class="btn-cadastrar">Cadastrar</button>
+        </div>
+      </form>
     </div>
 
-    <script src="../js/script.js"></script>
+    <div class="content"> <!--Restante dos dados, ADM e demais-->
+      <form id="multistep-form">
 
-  </body>
+        <div class="step active" id="step1">
+          <h2>Endereço</h2>
+          <div class="content cadastro-form">
+            <div class="form-left">
+              <div class="form-row">
+                <input type="text" id="endereco" placeholder="Logradouro"><br>
+                <input type="number" id="cep" placeholder="CEP"><br>
+                <input type="text" id="bairro" placeholder="Bairro"><br>
+              </div>
+            </div>
+            <div class="form-right">
+              <div class="form-row">
+                <input type="text" id="cidade" placeholder="Cidade"><br>
+                <input type="text" id="estado" placeholder="Estado"><br>
+                <input type="text" id="complemento" placeholder="Complemento">
+              </div>
+            </div>
+            <button class="btn-adicionar">Adicionar</button>
+          </div>
+
+          <div class="content">
+            <table>
+              <thead>
+                <tr>
+                  <th>Logradouro</th>
+                  <th>Cidade</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rua Projetada, 3000</td>
+                  <td>Teresina</td>
+                  <td>Piauí</td>
+                <tr>
+                  <td>Av. Miguel rosa, 2122</td>
+                  <td>Teresina</td>
+                  <td>Piauí</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="modal" class="modal-edit">
+            <div class="modal-edit-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h2>Endereço</h2>
+              <!-- Adicione aqui os campos para edição dos dados -->
+
+              <button id="btn-salvar-modal" onclick="saveChanges()">Salvar</button>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button type="button" onclick="nextStep(2)">Avançar</button>
+          </div>
+        </div>
+
+        <div class="step" id="step2">
+          <h2>Processos</h2>
+          <div class="content cadastro-form">
+            <div class="form-left">
+              <div class="form-row">
+                <label for="processo">Número:</label>
+                <input type="number" id="processo" placeholder="Número do processo">
+              </div>
+              <div class="form-row">
+                <label for="jurisdicao">Tipificação penal:</label>
+                <input type="text" id="jurisdicao">
+              </div>
+              <div class="form-row">
+                <label for="jurisdicao">Crime(tipo):</label>
+                <input type="text" id="jurisdicao">
+              </div>
+            </div>
+            <div class="form-right">
+              <div class="form-row">
+                <label for="regime">Tipo de regime:</label>
+                <select id="regime">
+                  <option>Selecionar</option>
+                  <option value="provisorio">Provisório</option>
+                  <option value="semiaberto">Sentenciado</option>
+                  <option value="provisorio-semiaberto">Provisorio e
+                    Sentenciado</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="representacao">Representação:</label>
+                <select id="representacao">
+                  <option>Selecionar</option>
+                  <option value="advogado">Advogado</option>
+                  <option value="defensor">Defensor</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="jurisdicao">Vara/Comarca:</label>
+                <input type="text" id="jurisdicao">
+              </div>
+            </div>
+            <button class="btn-adicionar">Adicionar</button>
+          </div>
+
+          <div class="content">
+            <table>
+              <thead>
+                <tr>
+                  <th>Número</th>
+                  <th>Crime</th>
+                  <th>Vara/Comarca</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1234567890</td>
+                  <td>Furto</td>
+                  <td>Teresina</td>
+                <tr>
+                  <td>0987654321</td>
+                  <td>Roubo</td>
+                  <td>Teresina</td>
+                </tr>
+                <tr>
+                  <td>0987654321</td>
+                  <td>Roubo</td>
+                  <td>Teresina</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="modal2" class="modal-edit">
+            <div class="modal-edit-content">
+              <span class="close" onclick="closeModal2()">&times;</span>
+              <h2>Processos</h2>
+              <!-- Adicione aqui os campos para edição dos dados -->
+
+              <button id="btn-salvar-modal2" onclick="saveChanges()">Salvar</button>
+            </div>
+          </div>
+
+
+          <div class="button-container">
+            <button type="button" onclick="previousStep(1)">Voltar</button>
+            <button type="button" onclick="nextStep(3)">Avançar</button>
+          </div>
+
+        </div>
+
+        <div class="step" id="step3">
+          <h2>Documentos</h2>
+          <div class="content cadastro-form" style="justify-content: space-between;">
+            <div class="form-left" style="width: 50%;">
+              <label for="tipo-documento">Tipo de Documento:</label>
+              <select id="tipo-documento">
+                <option>Selecionar</option>
+                <option value="cpf">CPF</option>
+                <option value="identidade">Identidade</option>
+                <option value="habilitacao">Habilitação</option>
+              </select>
+
+              <div class="form-row">
+                <label for="descricao">Descrição do documento:</label>
+                <input type="text" id="descricao">
+              </div>
+
+              <input type="file" id="documento">
+              <button id="btn-adcionar" type="button">Adicionar</button>
+            </div>
+          </div>
+
+          <div class="content">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome do documento</th>
+                  <th>Descrição</th>
+                  <th>Tipo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Identidade</td>
+                  <td>Descrição da identidade</td>
+                  <td>identidade.jpg</td>
+                </tr>
+                <tr>
+                  <td>CPF</td>
+                  <td>descricao do CPF</td>
+                  <td>cpf.jpg</td>
+                </tr>
+                <tr>
+                  <td>Alvará soltura</td>
+                  <td>Descrição do documento</td>
+                  <td>alvara.pdf</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="modal3" class="modal-edit">
+            <div class="modal-edit-content">
+              <span class="close" onclick="closeModal3()">&times;</span>
+              <h2>Documentos</h2>
+              <!-- Adicione aqui os campos para edição dos dados -->
+
+              <button id="btn-salvar-modal3" onclick="saveChanges()">Salvar</button>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button type="button" onclick="previousStep(2)">Voltar</button>
+            <button type="button" onclick="nextStep(4)">Avançar</button>
+          </div>
+        </div>
+
+        <div class="step" id="step4">
+          <h2>Outros</h2>
+          <label>Outras informações</label>
+          <div class="content cadastro-form">
+            <textarea style="width: 100%; height: 50px;"></textarea>
+          </div>
+
+          <div class="button-container">
+            <button type="button" onclick="previousStep(3)">Voltar</button>
+            <button>Cadastrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="../js/script.js"></script>
+
+</body>
+
 </html>
