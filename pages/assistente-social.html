@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Assistente Social - SIAPEN</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <h3>Olá</h3>
+    <span>Roberto Carlos de sousa</span>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
+    <ul>
+      <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+      <li><a href="./internos.html"><i class="fas fa-pen"></i>Internos</a></li>
+      <li><a href="./unidades.html"><i class="fas fa-hotel"></i>Unidades</a></li>
+      <li><a href="./usuarios.html"><i class="fas fa-user"></i>Usuários</a></li>
+      <li><a style="color: #329542" href="./assistente-social.html"><i class="fas fa-user"></i>Assistente social</a></li>
+    </ul>
+
+    <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+
+    <div class="menu-icon" onclick="toggleSidebar()">
+      <span>&#9776;</span>
+    </div>
+
+    <button id="logout">Sair</button>
+  </div>
+
+  <div class="container">
+
+    <div style="padding: 15px 5px 0 0;" class="content">
+      <div style="float: right;" class="card">
+        <h3>Buscar Interno</h3>
+        <a class="button-a" href="#">Buscar</a>
+      </div>
+    </div>
+    <div class="content">
+      <div>
+        <h3 style="color: red;">Internos pendentes</h3>
+        <br>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Vulgo</th>
+              <th>CPF</th>
+              <th>Data</th>
+              <th>Hora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>João pereira costa</td>
+              <td>Chefe</td>
+              <td>20035609803</td>
+              <td>20/03/2023</td>
+              <td>02:20h</td>
+              <td class="edit-icon">
+                <a href="./interno-assitente-social.html"><i class="fas fa-pen"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>Francisco Major César</td>
+              <td>Nenhum</td>
+              <td>00227887616</td>
+              <td>23/03/2023</td>
+              <td>10:50h</td>
+              <td class="edit-icon">
+                <i class="fas fa-pen"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>Carlos andre silva</td>
+              <td>cabeça</td>
+              <td>23409837810</td>
+              <td>23/03/2023</td>
+              <td>16:10h</td>
+              <td class="edit-icon">
+                <i class="fas fa-pen"></i>
+              </td>
+            </tr>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

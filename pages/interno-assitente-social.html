@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Interno - Assitente social</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <h3>Olá</h3>
+    <span>Roberto Carlos de sousa</span>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <img class="logo" src="../assets/logo.png" alt="Logo SEJUS">
+    <ul>
+      <li><a href="./dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+      <li><a href="./internos.html"><i class="fas fa-pen"></i>Internos</a></li>
+      <li><a href="./unidades.html"><i class="fas fa-hotel"></i>Unidades</a></li>
+      <li><a href="./usuarios.html"><i class="fas fa-user"></i>Usuários</a></li>
+      <li><a style="color: #329542" href="./assistente-social.html"><i class="fas fa-user"></i>Assitente S.&#9001; voltar</a></li>
+    </ul>
+
+    <button class="toggle-button" onclick="toggleSidebar()">&#171 Recolher</button>
+
+    <div class="menu-icon" onclick="toggleSidebar()">
+      <span>&#9776;</span>
+    </div>
+
+    <button id="logout"><a style="color: #ccc" href="../index.html">Sair</a></button>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <div class="modal-content">
+        <h2>Identificação</h2>
+        <form style="padding: 30px 30px 0px 30px;" class="form-container">
+          <div class="form-row">
+            <label>Filiação</label>
+            <input type="text" placeholder="Pai">
+            <label for="regime">Falecido:</label>
+            <div class="radio-group">
+              <input type="radio" id="fechado" name="regime" value="fechado">
+              <label for="fechado">SIM</label>
+              <input type="radio" id="semiaberto" name="regime" value="semiaberto">
+              <label for="semiaberto">NÃO</label>
+            </div>
+            <br>
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Mãe">
+            <label for="maefalecido">Falecido:</label>
+            <div class="radio-group">
+              <input type="radio" id="fechado" name="maefalecido" value="sim">
+              <label for="fechado">SIM</label>
+              <input type="radio" id="semiaberto" name="maefalecido" value="nao">
+              <label for="semiaberto">NÃO</label>
+            </div>
+          </div>
+      </div>
+      <br><br>
+      <div class="form-row">
+        <label for="regime">Identificação Social:</label>
+        <div class="radio-group">
+          <input type="radio" id="masculino" name="regime" value="masculino">
+          <label for="masculino">Masculino</label>
+          <input type="radio" id="feminino" name="regime" value="feminino">
+          <label for="feminino">Feminino</label>
+          <input type="radio" id="homossexual" name="regime" value="homossexual">
+          <label for="outros">Homossexual</label>
+          <input type="radio" id="outros" name="regime" value="outros">
+          <label for="outros">Outros</label>
+        </div>
+      </div>
+      <br><br>
+      <div class="form-row">
+        <label for="tipo">Possui Religião:</label>
+        <select name="tipo" id="tipo">
+          <option>Selecione</option>
+          <option>NÃO</option>
+          <option>SIM</option>
+        </select>
+        <label for="outros">Qual</label>
+        <input type="text" id="outros" name="regime">
+      </div>
+      <br><br>
+      <div class="form-row">
+        <label for="genero">Cor/Etinia:</label>
+        <select name="genero" id="genero">
+          <option>Selecione</option>
+          <option>Negro</option>
+          <option>Branco</option>
+          <option>Indígina</option>
+          <option>Pardo</option>
+        </select>
+      </div>
+      <br>
+      <div class="form-row">
+        <label for="estadosCivil">Estado Civíl:</label>
+        <select name="estadosCivil" id="estadosCivil">
+          <option>Selecione</option>
+          <option>Solteiro(a)</option>
+          <option>Casado(a)</option>
+          <option>União estável</option>
+          <option>Separado(a)</option>
+          <option>Viúvo(a)</option>
+        </select>
+      </div>
+      <br>
+      <div class="form-row">
+        <label for="escolaridade">Escolaridade:</label>
+        <select name="escolaridade" id="escolaridade">
+          <option>Selecione</option>
+          <option>Analfabeto</option>
+          <option>Alfabetizado</option>
+          <option>Fundamental incompleto</option>
+          <option>Fundamental completo</option>
+          <option>Médio incompleto</option>
+          <option>Médio completo</option>
+          <option>Superior incompleto</option>
+          <option>Superior completo</option>
+        </select>
+      </div>
+      </form>
+    </div>
+
+    <div class="content">
+      <div class="modal-content">
+        <h2>Documentação Pessoal</h2>
+        <form style="padding: 30px 30px 0px 30px;" class="form-container">
+          <div class="form-row">
+            <label form="doc">Possui documentos?</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="sim" name="doc" value="sim">
+              <label for="sim">SIM</label>
+              <input type="radio" id="nao" name="doc" value="nao">
+              <label for="nao">NÃO</label>
+            </div>
+            <label>Com quem estão?</label>
+            <input type="text">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="docs">Quais faltam</label>
+            <div class="radio-group">
+              <input type="radio">
+              <label>RG</label>
+              <br>
+              <input type="radio">
+              <label>CPF</label>
+              <br>
+              <input type="radio">
+              <label>CTPS</label>
+              <br>
+              <input type="radio">
+              <label>SUS</label>
+              <br>
+              <input type="radio">
+              <label>Certidão nascimento</label>
+              <br>
+              <input type="radio">
+              <label>Título</label>
+              <br>
+              <input type="radio">
+              <label>Certidão de casamento</label>
+              <br>
+              <input type="radio">
+              <label>Reservista</label>
+            </div>
+          </div>
+      </div>
+
+      </form>
+    </div>
+
+    <div class="content">
+      <div class="modal-content">
+        <h2>Situação Familiar</h2>
+        <form style="padding: 30px 30px 0px 30px;" class="form-container">
+          <div class="form-row">
+            <h3>Referência 1</h3>
+            <label>Nome</label>
+            <input type="text">
+            <label>Parentesco</label>
+            <input type="text">
+            <label>Telefone para contato</label>
+            <input type="number">
+          </div>
+          <br>
+          <div class="form-row">
+            <h3>Referência 2</h3>
+            <label>Nome</label>
+            <input type="text">
+            <label>Parentesco</label>
+            <input type="text">
+            <label>Telefone para contato</label>
+            <input type="number">
+          </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <label form="relaconamento">Relacionamento com a familia</label form="relaconamento">
+        <div class="radio-group">
+          <input type="radio" id="exel" name="relaconamento" value="exel">
+          <label for="exel">Exelente</label>
+          <input type="radio" id="bom" name="relaconamento" value="bom">
+          <label for="bom">Bom</label>
+          <input type="radio" id="ruim" name="relaconamento" value="ruim">
+          <label for="ruim">Ruim</label>
+          <input type="radio" id="pessimo" name="relaconamento" value="pessimo">
+          <label for="pessimo">Péssimo</label>
+        </div>
+        <label>Observação</label>
+        <textarea rows="4"></textarea>
+      </div>
+      <br>
+      <h3>Composição Familiar</h3>
+      <br>
+      <input type="text" placeholder="Nome" style="width: 400px";>
+      <input type="text" placeholder="Parentesco" style="width: 200px";>
+      <input type="text" placeholder="Escolaridade" style="width: 200px";>
+      <input type="number" placeholder="Renda">
+      <input type="button" value="Incluir" style="padding: 5px; background-color: #329542;border-radius: 4px;";>
+      <br><br>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Parentesco</th>
+            <th>Escolaridade</th>
+            <th>Renda</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maria de fatima sousa</td>
+            <td>Mãe</td>
+            <td>Fundamental completo</td>
+            <td>R$1.330,00</td>
+          </tr>
+          <tr>
+            <td>Julia vitoria sousa</td>
+            <td>Esposa</td>
+            <td>Ensino médio completo</td>
+            <td>R$1.330,00</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <div class="form-row">
+        <label for="tipo">A familia esta em alguma programa social:</label>
+        <select name="tipo" id="tipo">
+          <option>Selecione</option>
+          <option>NÃO</option>
+          <option>SIM</option>
+        </select>
+        <label for="outros">Qual</label>
+        <input type="text" id="outros" name="regime">
+      </div>
+      <br>
+      <div class="form-row">
+        <label form="renda">Antes de ser preso, qual sua posição econômica dentro da família?</label form="renda">
+        <div class="radio-group">
+          <input type="radio" id="arrimo" name="renda" value="arrimo">
+          <label for="arrimo">Arrimo de família</label>
+          <input type="radio" id="parcial" name="renda" value="parcial">
+          <label for="parcial">Colaborava parcialmente</label>
+          <input type="radio" id="proprio" name="renda" value="proprio">
+          <label for="proprio">Renda para consumo próprio</label>
+        </div>
+        <br>
+        <label>Outros:</label>
+        <input></input>
+      </div>
+      <br>
+      <div class="form-row">
+        <label>Atualmente quem é responsável pelo sustento da família?</label>
+        <input type="text">
+      </div>
+      <br>
+      <div class="form-row">
+        <label>Alguém da sua família teve/tem envolvimento com a justiça?</label>
+        <input type="text">
+      </div>
+      <br>
+      <div class="form-row">
+        <label for="tipo">Tem Filhos/Enteados?</label>
+        <select name="tipo" id="tipo">
+          <option>Selecione</option>
+          <option>NÃO</option>
+          <option>SIM</option>
+        </select>
+      </div>
+      <input type="text" placeholder="Nome" style="width: 400px";>
+      <input type="number" placeholder="Idade" style="width: 200px";>
+      <input type="text" placeholder="Benefício social" style="width: 200px";>
+      <input type="text" placeholder="Registrado?">
+      <input type="button" value="Incluir" style="padding: 5px; background-color: #329542;border-radius: 4px;";>
+      <br><br>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Benefício social</th>
+            <th>Registrado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>João neto sousa</td>
+            <td>12</td>
+            <td>Não</td>
+            <td>Não</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <div class="form-row">
+        <label for="filho">Os Filhos são do mesmo Pai/Mãe?</label>
+        <div class="radio-group">
+          <input type="radio" id="flho-sim" name="filho" value="sim">
+          <label for="filho-sim">Sim</label>
+          <input type="radio" id="filho-nao" name="filho" value="nao">
+          <label for="filho-nao">Não</label>
+
+        </div>
+        <label for="outros">Especificar</label>
+        <textarea type="text" id="outros" name="filho"></textarea>
+      </div>
+      <br>
+      <div class="form-row">
+        <label for="estudam">Seus Filhos estudam?</label>
+        <div class="radio-group">
+          <input type="radio" id="estudam-sim" name="estudam" value="sim">
+          <label for="estudam-sim">Sim</label>
+          <input type="radio" id="estudam-nao" name="estudam" value="nao">
+          <label for="estudam-nao">Não</label>
+        </div>
+        <label for="outros">Por que</label>
+        <textarea type="text" id="outros" name="estudam"></textarea>
+      </div>
+      <br>
+      <div class="form-row">
+        <label>Atualmente com quem está(ão) seu(s) filho(s)?</label>
+        <textarea type="text" id="outros" name="estudam"></textarea>
+      </div>
+      </form>
+    </div>
+
+    <div class="content">
+      <div class="modal-content">
+        <h2>Situação Habitacional</h2>
+        <form style="padding: 30px 30px 0px 30px;" class="form-container">
+          <div class="form-row">
+            <label form="residen">Sua residência é:</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="rural" name="doc" value="rural">
+              <label for="rural">Rural</label>
+              <input type="radio" id="urbana" name="doc" value="urbana">
+              <label for="urbana">Urbana</label>
+            </div>
+          </div>
+          <br>
+          <div class="form-row">
+            <label form="situacao">Situação:</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="propria" name="doc" value="propria">
+              <label for="propria">Própria</label>
+              <input type="radio" id="alugada" name="doc" value="alugada">
+              <label for="alugada">Alugada</label>
+              <input type="radio" id="cedida" name="doc" value="cedida">
+              <label for="cedida">Cedida</label>
+              <input type="radio" id="outross" name="doc" value="outros">
+              <label for="outross">Outros</label>
+            </div>
+            <label>Complemento</label>
+            <textarea></textarea>
+          </div>
+          <br>
+          <div class="form-row">
+            <label form="situacao">Construção:</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="alvenaria" name="doc" value="alvenaria">
+              <label for="alvenaria">Alvenaria</label>
+              <input type="radio" id="madeira" name="doc" value="madeira">
+              <label for="madeira">Madeira</label>
+              <input type="radio" id="outrosss" name="doc" value="outros">
+              <label for="outrosss">Outros</label>
+            </div>
+            <label>Observação</label>
+            <textarea></textarea>
+          </div>
+          <br>
+          <div class="form-row">
+            <label form="abastecimento">Abastecimento de água:</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="publica" name="doc" value="publica">
+              <label for="publica">Pública</label>
+              <input type="radio" id="poco" name="doc" value="poco">
+              <label for="poco">Poço</label>
+              <input type="radio" id="pipa" name="doc" value="pipa">
+              <label for="pipa">Carro pipa</label>
+              <input type="radio" id="outrosss" name="doc" value="outros">
+              <label for="outrosss">Outros</label>
+            </div>
+            <label>Observação</label>
+            <textarea></textarea>
+          </div>
+          <br>
+          <div class="form-row">
+            <label form="abastecimento">Iluminação:</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="medidor" name="doc" value="medidor">
+              <label for="medidor">Com medidor</label>
+              <input type="radio" id="semmedidor" name="doc" value="semmedidor">
+              <label for="semmedidor">Sem medidor</label>
+              <input type="radio" id="outrosss" name="doc" value="outros">
+              <label for="outrosss">Outros</label>
+            </div>
+            <label>Observação</label>
+            <textarea></textarea>
+          </div>
+          <br>
+          <div class="form-row">
+            <label form="esgoto">Escoamento sanitário:</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="publica" name="doc" value="publica">
+              <label for="publica">Público</label>
+              <input type="radio" id="fossa" name="doc" value="fossa">
+              <label for="fossa">fossa</label>
+              <input type="radio" id="outrosss" name="doc" value="outros">
+              <label for="outrosss">Outros</label>
+            </div>
+            <label>Observação</label>
+            <textarea></textarea>
+          </div>
+          <br>
+          <div class="form-row">
+            <label form="esgoto">Lixo:</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="coleta" name="doc" value="coleta">
+              <label for="coleta">Coletado</label>
+              <input type="radio" id="enterrado" name="doc" value="enterrado">
+              <label for="enterrado">Enterrado</label>
+              <input type="radio" id="queimado" name="doc" value="queimado">
+              <label for="queimado">Queimado</label>
+              <input type="radio" id="aberto" name="doc" value="aberto">
+              <label for="aberto">Céu aberto</label>
+              <input type="radio" id="outrosss" name="doc" value="outros">
+              <label for="outrosss">Outros</label>
+            </div>
+            <label>Observação</label>
+            <textarea></textarea>
+          </div>
+      </div>
+
+      </form>
+    </div>
+
+    <div class="content">
+      <div class="modal-content">
+        <h2>Situação Funcional</h2>
+        <form style="padding: 30px 30px 0px 30px;" class="form-container">
+          <div class="form-row">
+            <label for="trabal">Trabalhava antes do ingresso no sistema prisional??</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="sim-trab" name="trabal" value="sim-trab">
+              <label for="sim-trab">SIM</label>
+              <input type="radio" id="nao-trab" name="trabal" value="nao-trab">
+              <label for="nao-trab">NÃO</label>
+            </div>
+            <label>Observação</label>
+            <input type="text">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="prev">Você contribui para previdência social?</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="sim-prev" name="prev" value="sim">
+              <label for="sim-prev">SIM</label>
+              <input type="radio" id="nao-prev" name="prev" value="nao">
+              <label for="nao-prev">NÃO</label>
+            </div>
+            <label>Qual?</label>
+            <input type="text">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="prof">Você tem profissão?</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="sim-prev" name="prof" value="sim">
+              <label for="sim-prof">SIM</label>
+              <input type="radio" id="nao-prof" name="prof" value="nao">
+              <label for="nao-prof">NÃO</label>
+            </div>
+            <label>Qual?</label>
+            <input type="text">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="sindi">Você contribuia com sindicato?</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="sim-sindi" name="sindi" value="sim">
+              <label for="sim-sindi">SIM</label>
+              <input type="radio" id="nao-sindi" name="sindi" value="nao">
+              <label for="nao-sindi">NÃO</label>
+            </div>
+            <label>Quanto tempo?</label>
+            <input type="text">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="curso">Você ja fez curso profissionalizante?</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="sim-curso" name="curso" value="sim">
+              <label for="sim-curso">SIM</label>
+              <input type="radio" id="nao-curso" name="curso" value="nao">
+              <label for="nao-curso">NÃO</label>
+            </div>
+            <label>Qual?</label>
+            <input type="text">
+          </div>
+          <br>
+          <div class="form-row">
+            <label for="intere">Tem interesse em aprender uma profissão?</label form="doc">
+            <div class="radio-group">
+              <input type="radio" id="sim-intere" name="intere" value="sim">
+              <label for="sim-intere">SIM</label>
+              <input type="radio" id="nao-intere" name="intere" value="nao">
+              <label for="nao-intere">NÃO</label>
+            </div>
+            <label>Qual?</label>
+            <input type="text">
+          </div>
+          <br>
+          
+      </div>
+
+      </form>
+    </div>
+
+    <div class="content" style="display: flex; flex-direction: column;">
+      <h3>SÍNTESE PARA CTC</h3>
+      <textarea cols="30" rows="20"></textarea>
+      <br>
+      <h3>EVOLUÇÃO</h3>
+      <textarea cols="30" rows="20"></textarea>
+    </div>
+
+    <button style="float: right; margin-top: 10px;">Cadastrar</button>
+  </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
